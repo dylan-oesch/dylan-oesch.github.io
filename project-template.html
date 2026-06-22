@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reusable project detail template">
+  <title>Project Detail Template</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="project-purple">
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Portfolio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Portfolio</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#next-steps">Next Steps</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="detail-hero section">
+      <div class="template-note">Template only — replace with real project content.</div>
+      <div class="detail-hero-grid">
+        <div>
+          <p class="eyebrow">Project Writeup</p>
+          <h1>Project Title</h1>
+          <p class="hero-copy">Project subtitle placeholder for a concise overview of the work, purpose, and outcome.</p>
+          <div class="hero-actions" aria-label="Template actions">
+            <a class="button button-primary" href="index.html">Back Home</a>
+            <a class="button button-secondary" href="#snapshot">View Snapshot</a>
+          </div>
+        </div>
+        <aside class="card detail-summary-card" aria-label="Project summary">
+          <div class="project-accent" aria-hidden="true"></div>
+          <div class="card-topline">
+            <span>Template</span>
+            <span>Placeholder</span>
+          </div>
+          <p>Use this area for a short project summary when real content is ready.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section detail-section" id="snapshot">
+      <div class="section-heading">
+        <p class="eyebrow">Snapshot</p>
+        <h2>Project snapshot grid</h2>
+      </div>
+      <div class="snapshot-grid">
+        <div class="card snapshot-card">
+          <span>Role</span>
+          <strong>Placeholder</strong>
+        </div>
+        <div class="card snapshot-card">
+          <span>Scope</span>
+          <strong>Placeholder</strong>
+        </div>
+        <div class="card snapshot-card">
+          <span>Timeline</span>
+          <strong>Placeholder</strong>
+        </div>
+        <div class="card snapshot-card">
+          <span>Focus</span>
+          <strong>Placeholder</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section detail-content">
+      <article class="detail-block" id="problem">
+        <div class="section-heading">
+          <p class="eyebrow">Problem</p>
+          <h2>Problem placeholder</h2>
+        </div>
+        <div class="card prose-card">
+          <p>Describe the context, constraints, and user or technical challenge this project addressed.</p>
+        </div>
+      </article>
+
+      <article class="detail-block" id="solution">
+        <div class="section-heading">
+          <p class="eyebrow">Solution</p>
+          <h2>Solution placeholder</h2>
+        </div>
+        <div class="card prose-card">
+          <p>Describe the approach, core decisions, and how the project responded to the problem.</p>
+        </div>
+      </article>
+
+      <article class="detail-block" id="system-design">
+        <div class="section-heading">
+          <p class="eyebrow">System Design</p>
+          <h2>Architecture placeholder</h2>
+        </div>
+        <div class="system-grid">
+          <div class="card system-card">
+            <span>Input</span>
+            <p>Placeholder system component.</p>
+          </div>
+          <div class="card system-card">
+            <span>Process</span>
+            <p>Placeholder system component.</p>
+          </div>
+          <div class="card system-card">
+            <span>Output</span>
+            <p>Placeholder system component.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-block" id="build-process">
+        <div class="section-heading">
+          <p class="eyebrow">Build Process</p>
+          <h2>Process placeholder</h2>
+        </div>
+        <div class="timeline-list">
+          <div class="card timeline-item">
+            <span>Step 01</span>
+            <p>Placeholder build process note.</p>
+          </div>
+          <div class="card timeline-item">
+            <span>Step 02</span>
+            <p>Placeholder build process note.</p>
+          </div>
+          <div class="card timeline-item">
+            <span>Step 03</span>
+            <p>Placeholder build process note.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-block" id="demo-media">
+        <div class="section-heading">
+          <p class="eyebrow">Demo Media</p>
+          <h2>Media placeholder</h2>
+        </div>
+        <div class="media-placeholder" role="img" aria-label="Demo media placeholder">
+          <span>Demo media placeholder</span>
+        </div>
+      </article>
+
+      <article class="detail-block" id="learned">
+        <div class="section-heading">
+          <p class="eyebrow">What I Learned</p>
+          <h2>Learning placeholder</h2>
+        </div>
+        <div class="card prose-card">
+          <p>Summarize the key technical, product, or process lessons from the project.</p>
+        </div>
+      </article>
+
+      <article class="detail-block" id="next-steps">
+        <div class="section-heading">
+          <p class="eyebrow">Next Steps</p>
+          <h2>Future placeholder</h2>
+        </div>
+        <div class="card prose-card">
+          <p>List follow-up improvements, open questions, or future directions for the project.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
