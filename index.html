@@ -3,159 +3,275 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio website">
-  <title>Personal Portfolio</title>
+  <meta name="description" content="Dylan Oesch — software, product & CAD portfolio.">
+  <title>Dylan Oesch — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Portfolio home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Portfolio</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-        <span class="sr-only">Toggle navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="project-template.html">Template</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+  <div class="layout">
+    <!-- Sidebar (collapses to a top bar on mobile) -->
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="#top" aria-label="Portfolio home">
+          <span class="brand-name">Dylan Oesch</span>
+          <span class="brand-tag">Software · ML · Embedded</span>
+        </a>
+        <a class="topbar-brand brand-name" href="#top">Dylan Oesch</a>
 
-  <main id="top">
-    <section class="hero section">
-      <div class="hero-content">
-        <p class="eyebrow">Technical Portfolio</p>
-        <h1>Building useful software with clarity and care.</h1>
-        <p class="hero-copy">
-          A clean portfolio shell for highlighting selected work, technical strengths, and professional background.
-        </p>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button-primary" href="#projects">View Projects</a>
-          <a class="button button-secondary" href="#contact">Get in Touch</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="sidebar-nav" id="sidebar-nav" aria-label="Primary">
+          <a href="#work">01 · Work</a>
+          <a href="#projects">02 · Projects</a>
+          <a href="#about">03 · About</a>
+          <a href="#skills">04 · Skills</a>
+          <a href="#contact">05 · Contact</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-foot">
+        <span class="monogram" aria-hidden="true">DO</span>
+        <span class="sidebar-copy">&copy; <span id="year"></span> — London, ON</span>
+      </div>
+    </aside>
+
+    <main class="main" id="top">
+      <!-- 01 · Work -->
+      <section class="section" id="work">
+        <div class="section-head">
+          <p class="eyebrow">( 01 )</p>
+          <h1>Where I've worked, and what I owned.</h1>
         </div>
-      </div>
-      <aside class="hero-panel" aria-label="Portfolio snapshot">
-        <div class="status-row">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Portfolio status</span>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Jun 2022 — Sep 2025</div>
+            <div class="timeline-role">
+              <span class="role">Bricklayer</span>
+              <span class="company">— Courtney Custom Masonry</span>
+              <span class="place">Varna, Ontario</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Mixed mortar and prepared materials to support the installation of 2000+ bricks and stones weekly, improving workflow efficiency on residential projects.</li>
+              <li>Constructed and maintained scaffolding, ensuring 100% compliance with OSHA and CSA safety regulations.</li>
+              <li>Transported and laid brick and stone according to site specifications, achieving precise alignment and quality standards for 5 projects a season.</li>
+            </ul>
+            <div class="timeline-tools">Masonry · Scaffolding · OSHA / CSA compliance</div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Feb 2023 — Sep 2025</div>
+            <div class="timeline-role">
+              <span class="role">Manager</span>
+              <span class="company">— Domino's</span>
+              <span class="place">Goderich, Ontario</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Supervised daily store operations, coordinating a team of 10+ employees to maintain efficient service and workflow, reducing order errors by 60%.</li>
+              <li>Managed inventory and closing procedures for daily sales exceeding $4,000, ensuring accuracy, compliance, and smooth end-of-day transitions.</li>
+              <li>Trained 15+ new employees, developing leadership, communication, and problem-solving skills in a fast-paced environment and improving team efficiency.</li>
+            </ul>
+            <div class="timeline-tools">Team leadership · Inventory · Training</div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Jan 2018 — Dec 2022</div>
+            <div class="timeline-role">
+              <span class="role">Co-Founder &amp; Operator</span>
+              <span class="company">— MD Beez</span>
+              <span class="place">Clinton, Ontario</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Maintained 7 beehives, harvested and processed honey, and operated extraction equipment while ensuring high product quality and hive health.</li>
+              <li>Managed packaging, labeling, and inventory for 2000+ jars of honey per season, coordinated all local sales, and grew customer engagement through community outreach.</li>
+            </ul>
+            <div class="timeline-tools">Operations · Production · Local sales</div>
+          </article>
         </div>
-        <div class="metric-grid">
-          <div>
-            <span class="metric-value">00</span>
-            <span class="metric-label">Projects</span>
+      </section>
+
+      <!-- 02 · Projects -->
+      <section class="section" id="projects">
+        <div class="section-head">
+          <p class="eyebrow">( 02 ) — Dylan Oesch, software engineering student</p>
+          <h1>Personal projects, each built with its own colour.</h1>
+          <p class="lede">A short line on the through-line of your work — the theme carried onto the page and into the build itself.</p>
+        </div>
+
+        <div class="docket">
+          <a class="docket-row accent-purple" href="argus.html" data-context-type="INDEPENDENT" data-context-name="PERSONAL PROJECT" data-context-url="">
+            <span class="docket-bar" aria-hidden="true"></span>
+            <span class="docket-index">01</span>
+            <span class="docket-body">
+              <span class="docket-title">
+                <span class="name">ARGUS</span>
+                <span class="year">2025</span>
+              </span>
+              <span class="docket-tagline">A locally hosted AI model, paired with custom hardware.</span>
+            </span>
+            <span class="docket-tags">
+              <span class="tag">Software</span>
+              <span class="tag">Embedded</span>
+            </span>
+            <span class="docket-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a class="docket-row accent-red" href="mechanical-arm.html" data-context-type="ACADEMIC" data-context-name="WESTERN UNIVERSITY" data-context-url="">
+            <span class="docket-bar" aria-hidden="true"></span>
+            <span class="docket-index">02</span>
+            <span class="docket-body">
+              <span class="docket-title">
+                <span class="name">Mechanical Arm</span>
+                <span class="year">Year</span>
+              </span>
+              <span class="docket-tagline">A one-line tagline that says what it is and why it matters.</span>
+            </span>
+            <span class="docket-tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">CAD</span>
+            </span>
+            <span class="docket-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a class="docket-row accent-darkred" href="calhoun-epicor.html" data-context-type="PROFESSIONAL" data-context-name="CALHOUN SUPER STRUCTURES" data-context-url="">
+            <span class="docket-bar" aria-hidden="true"></span>
+            <span class="docket-index">03</span>
+            <span class="docket-body">
+              <span class="docket-title">
+                <span class="name">Calhoun Epicor Middleware</span>
+                <span class="year">Year</span>
+              </span>
+              <span class="docket-tagline">A one-line tagline that says what it is and why it matters.</span>
+            </span>
+            <span class="docket-tags">
+              <span class="tag">Software</span>
+              <span class="tag">Automation</span>
+            </span>
+            <span class="docket-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 03 · About -->
+      <section class="section" id="about">
+        <div class="section-head">
+          <p class="eyebrow">( 03 )</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="portrait">
+            <span class="label">Portrait, 3:4</span>
           </div>
-          <div>
-            <span class="metric-value">00</span>
-            <span class="metric-label">Skills</span>
-          </div>
-          <div>
-            <span class="metric-value">00</span>
-            <span class="metric-label">Links</span>
+          <div class="about-copy">
+            <h2>Software engineering student with a focus on machine learning and embedded systems — and a preference for problems that end in working hardware.</h2>
+            <p style="margin-top:24px;">I'm a third-year software engineering student at Western University. Most of what I build sits between software and hardware, including ARGUS, a project that combines a locally hosted AI model with custom hardware. The problems I find most engaging are the ones where software leaves the laptop and meets timing constraints, power limitations, physical tolerances, and the gap between a design and a working object.</p>
+            <p>Across my work, I'm drawn to intelligent systems that sense, decide, and act in the physical world. Whether applied to robotics, industrial automation, or vehicles, I care about building dependable systems whose software, electronics, and mechanical components work together as one.</p>
+            <div class="fact-row">
+              <div class="fact">
+                <span class="label">Based in</span>
+                <span class="value">London, ON</span>
+              </div>
+              <div class="fact">
+                <span class="label">Focus</span>
+                <span class="value">SW · ML · Embedded</span>
+              </div>
+              <div class="fact">
+                <span class="label">Currently</span>
+                <span class="value">3rd-year @ Western</span>
+              </div>
+            </div>
           </div>
         </div>
-      </aside>
-    </section>
+      </section>
 
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <p class="eyebrow">Featured Projects</p>
-        <h2>Selected work placeholders</h2>
-      </div>
-      <div class="card-grid project-grid">
-        <article class="card project-card project-blue">
-          <div class="project-accent" aria-hidden="true"></div>
-          <div class="card-topline">
-            <span>Project</span>
-            <span>Placeholder</span>
-          </div>
-          <h3>Project Title</h3>
-          <p>Short project summary.</p>
-          <div class="project-meta" aria-label="Project details">
-            <span>Category</span>
-            <span>Status</span>
-          </div>
-          <a class="project-link" href="project-template.html">View template</a>
-        </article>
-        <article class="card project-card project-purple">
-          <div class="project-accent" aria-hidden="true"></div>
-          <div class="card-topline">
-            <span>Project</span>
-            <span>Placeholder</span>
-          </div>
-          <h3>Project Title</h3>
-          <p>Short project summary.</p>
-          <div class="project-meta" aria-label="Project details">
-            <span>Category</span>
-            <span>Status</span>
-          </div>
-          <a class="project-link" href="project-template.html">View template</a>
-        </article>
-        <article class="card project-card project-teal">
-          <div class="project-accent" aria-hidden="true"></div>
-          <div class="card-topline">
-            <span>Project</span>
-            <span>Placeholder</span>
-          </div>
-          <h3>Project Title</h3>
-          <p>Short project summary.</p>
-          <div class="project-meta" aria-label="Project details">
-            <span>Category</span>
-            <span>Status</span>
-          </div>
-          <a class="project-link" href="project-template.html">View template</a>
-        </article>
-      </div>
-    </section>
+      <!-- 04 · Skills -->
+      <section class="section" id="skills">
+        <div class="section-head">
+          <p class="eyebrow">( 04 )</p>
+          <h2>What I work with.</h2>
+        </div>
 
-    <section class="section" id="skills">
-      <div class="section-heading">
-        <p class="eyebrow">Skills</p>
-        <h2>Technical focus placeholders</h2>
-      </div>
-      <div class="skill-list" aria-label="Skill placeholders">
-        <span>Skill Area</span>
-        <span>Skill Area</span>
-        <span>Skill Area</span>
-        <span>Skill Area</span>
-        <span>Skill Area</span>
-        <span>Skill Area</span>
-      </div>
-    </section>
+        <div class="skill-group">
+          <span class="label">Software &amp; AI</span>
+          <div class="skill-items">
+            <span>Python</span>
+            <span>Java</span>
+            <span>AI &amp; Machine Learning</span>
+            <span>API &amp; Workflow Automation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Embedded &amp; Automation</span>
+          <div class="skill-items">
+            <span>Embedded Systems</span>
+            <span>Sensors &amp; Actuators</span>
+            <span>Hardware–Software Integration</span>
+            <span>Industrial Automation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label">CAD &amp; Hardware</span>
+          <div class="skill-items">
+            <span>SolidWorks</span>
+            <span>Fusion 360</span>
+            <span>3D Printing</span>
+            <span>Mechanical Design</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Engineering Practice</span>
+          <div class="skill-items">
+            <span>Systems Thinking</span>
+            <span>Testing &amp; Validation</span>
+            <span>Process Improvement</span>
+            <span>Technical Documentation</span>
+          </div>
+        </div>
+      </section>
 
-    <section class="section about-section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>Background placeholder</h2>
-      </div>
-      <div class="card about-card">
-        <p>
-          Brief professional overview placeholder. Add a concise introduction, areas of interest, and the kind of work this portfolio should represent.
-        </p>
-      </div>
-    </section>
+      <!-- 05 · Contact -->
+      <section class="section" id="contact">
+        <div class="section-head" style="margin-bottom:0;">
+          <p class="eyebrow">( 05 )</p>
+          <div class="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-label">Available for internships — 2027</span>
+          </div>
+          <h1>Let's build intelligent systems that move.</h1>
+          <p class="lede">I'm interested in opportunities involving AI, embedded systems, automation, and software that interacts with the physical world.</p>
+        </div>
 
-    <section class="section contact-section" id="contact">
-      <div class="contact-content">
-        <p class="eyebrow">Contact</p>
-        <h2>Contact placeholder</h2>
-        <p>Use this section for preferred contact details and professional links.</p>
-      </div>
-      <span class="button button-primary" aria-disabled="true">Contact Link</span>
-    </section>
-  </main>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <a class="value" href="mailto:dylan.oesch@gmail.com">dylan.oesch@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">GitHub</span>
+            <a class="value" href="https://github.com/dylan-oesch" target="_blank" rel="noopener">github.com/dylan-oesch</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">LinkedIn</span>
+            <a class="value" href="https://linkedin.com/in/dylan-oesch" target="_blank" rel="noopener">linkedin.com/in/dylan-oesch</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Location</span>
+            <span class="value">London, Ontario, Canada</span>
+          </div>
+        </div>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Portfolio. All rights reserved.</p>
-  </footer>
+        <a class="btn" href="#" style="margin-top:36px;">Download resume &rarr;</a>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
