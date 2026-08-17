@@ -710,6 +710,51 @@ h3 {
   color: var(--label);
 }
 
+/* Coming-soon banner (reusable on any project detail page) */
+.coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding: 14px 18px;
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  background: var(--accent-faint);
+}
+
+.coming-soon .cs-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.coming-soon .cs-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.coming-soon .cs-text {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .coming-soon .cs-dot {
+    animation: cs-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes cs-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+}
+
 .template-note {
   display: inline-block;
   margin-bottom: 28px;
