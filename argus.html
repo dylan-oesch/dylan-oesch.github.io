@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ARGUS — a locally hosted AI model paired with custom hardware. A project by Dylan Oesch.">
+  <meta name="description" content="ARGUS — a physical, local-first AI assistant that unifies on-device reasoning, voice, integrations, and custom hardware. A project by Dylan Oesch.">
   <title>ARGUS — Dylan Oesch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@
           <div>
             <p class="label">Project 01</p>
             <h1 style="margin-top:12px;">ARGUS</h1>
-            <p class="lede">A locally hosted AI model, paired with custom hardware.</p>
+            <p class="lede">A physical, local-first AI assistant that uses a dedicated computer as a hub for reasoning, voice, personal tools, and controlled cloud capabilities.</p>
           </div>
           <div class="detail-theme">
             <span class="label">Theme</span>
@@ -61,26 +61,26 @@
 
         <!-- Spec strip -->
         <div class="spec-strip">
-          <div class="spec"><span class="label">Role</span><span class="value">Solo</span></div>
-          <div class="spec"><span class="label">Year</span><span class="value">2025</span></div>
-          <div class="spec"><span class="label">Tools</span><span class="value">TBD</span></div>
-          <div class="spec"><span class="label">Type</span><span class="value">AI + hardware</span></div>
+          <div class="spec"><span class="label">Role</span><span class="value">Solo — system architecture, software, hardware &amp; product design</span></div>
+          <div class="spec"><span class="label">Year</span><span class="value">2026</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Python · FastAPI · JavaScript · Ollama (Llama 3.2) · SQLite · ElevenLabs · Google APIs · Ubuntu/Linux · systemd · Git/GitHub</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">Local AI assistant + hardware system</span></div>
         </div>
 
-        <!-- Hero figure -->
+        <!-- Hero figure (placeholder until argus-hero.jpg is added) -->
         <figure class="figure">
           <div class="figure-frame">
             <div class="figure-left">
               <div class="bar"></div>
               <div class="bar-muted" style="width:85%;"></div>
               <div class="bar-muted" style="width:70%;"></div>
-              <div class="cap">interface, themed</div>
+              <div class="cap">central hub, themed</div>
             </div>
             <div class="figure-right">
               <span>ARGUS view</span>
             </div>
           </div>
-          <figcaption class="figcaption">Fig. 01 — replace with a real photo or render of ARGUS</figcaption>
+          <figcaption class="figcaption">Fig. 01 — finished ARGUS unit: angled 7-inch display in a custom enclosure (photo coming soon)</figcaption>
         </figure>
 
         <!-- Overview + Highlights -->
@@ -88,15 +88,15 @@
           <div class="two-col">
             <div class="detail-block">
               <h3>Overview</h3>
-              <p style="margin-top:16px;">ARGUS combines a locally hosted AI model with custom hardware — an AI system that runs on-device rather than in the cloud, built into hardware designed around it.</p>
-              <p>Add a second paragraph on what ARGUS does, who it's for, and what you owned end to end.</p>
+              <p style="margin-top:16px;">ARGUS (Adaptive Reasoning and Guidance Utility System) is a local-first personal AI assistant built as a physical device rather than another desktop chat window. A Lenovo ThinkCentre runs the FastAPI backend, local Ollama model, SQLite data store, voice services, and a dedicated 7-inch 1024×600 interface. The core interaction loop works locally, while cloud models and external services are treated as optional capability layers rather than requirements.</p>
+              <p>The system is designed as an orchestrator: common requests are handled by deterministic Python logic, open-ended requests fall back to the local model, and consequential external actions are placed behind explicit human approval. I designed the architecture, interface, deployment, voice/model integrations, development workflow, and 3D-printed enclosure, treating the software and physical product as one system.</p>
             </div>
             <div class="detail-block">
               <h3 style="margin-bottom:0;">Highlights</h3>
               <ul class="highlight-list">
-                <li>Locally hosted AI model — no cloud dependency</li>
-                <li>Custom hardware built around the model</li>
-                <li>Highlight three</li>
+                <li>Deployed physical kiosk — FastAPI/uvicorn, Xorg, Openbox, and Chromium are managed by systemd and enabled at boot on the ThinkCentre.</li>
+                <li>Local-first reasoning and voice — deterministic command routing, local Ollama llama3.2 fallback, browser push-to-talk transcription, and ElevenLabs TTS with graceful text-only fallback.</li>
+                <li>Safety and integrations — SQLite-backed approvals, Google Tasks/Calendar/Gmail support, optional Gemini routing, local project/command history, and 92 automated tests passing in the verified August 2026 state.</li>
               </ul>
             </div>
           </div>
@@ -105,14 +105,14 @@
           <article class="detail-block" id="problem">
             <p class="eyebrow">Problem</p>
             <h2>What needed solving.</h2>
-            <p>Describe the need behind ARGUS — why running the model locally on custom hardware mattered, and the constraints (timing, power, physical) that shaped it.</p>
+            <p>Most AI assistants are either cloud chat interfaces or isolated automation tools. They do not provide a persistent physical presence, do not unify personal context and actions in one system, and often require sending every request to a remote model. For a device that can eventually manage projects, files, communication, automations, and software-development tasks, I needed an architecture that remained useful locally, reached cloud services only when they added value, and placed human approval between AI reasoning and consequential external actions.</p>
           </article>
 
           <!-- Solution -->
           <article class="detail-block" id="solution">
             <p class="eyebrow">Solution</p>
             <h2>How I approached it.</h2>
-            <p>Describe the approach: the model you chose and why, how it's hosted locally, and how the hardware was designed to run it.</p>
+            <p>ARGUS uses the ThinkCentre as a dedicated local hub. A single FastAPI backend serves the 1024×600 dashboard, routes predictable commands to small Python handlers, falls back to Ollama for open-ended reasoning, stores local state in SQLite, and exposes voice and integration endpoints. The interface presents ARGUS as a central animated presence whose state changes through idle, listening, thinking, speaking, executing, success, error, and approval modes. Google writes and cloud escalation use an approval queue; optional Gemini routing is implemented, while premium Claude/OpenAI execution and broader personal-data connectors remain future work.</p>
           </article>
 
           <!-- System design -->
@@ -121,16 +121,16 @@
             <h2>How it fits together.</h2>
             <div class="spec-grid" style="margin-top:24px;">
               <div class="spec-card">
-                <span class="label">Input</span>
-                <p>What ARGUS takes in — sensors, camera, audio, etc.</p>
+                <span class="label">Physical Interface</span>
+                <p>Dedicated 7-inch 1024×600 display in a custom 3D-printed enclosure built around the ThinkCentre and audio hardware. Chromium runs as a kiosk, and the central hub state machine gives ARGUS a persistent visual presence.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Model</span>
-                <p>The locally hosted AI model and where it runs.</p>
+                <span class="label">Local Core</span>
+                <p>FastAPI/uvicorn backend, deterministic command router, Ollama llama3.2, SQLite database, project/note memory, approval queue, voice transcription, TTS endpoints, and system services. This is the default path and is designed to keep working when optional integrations are unavailable.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Output</span>
-                <p>What ARGUS does with the result.</p>
+                <span class="label">Integrations + Cloud</span>
+                <p>Current optional capabilities include Google Tasks/Calendar/Gmail and Gemini cloud routing behind configuration and approvals. Planned expansion includes premium models, network files and personal context, automations, remote access, and a review-first developer-agent workflow.</p>
               </div>
             </div>
           </article>
@@ -142,25 +142,37 @@
             <div class="timeline" style="margin-top:24px;">
               <div class="timeline-item">
                 <div class="timeline-date">Step 01</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Defined the product architecture: a dedicated physical hub with local reasoning by default, optional cloud escalation, and explicit approval before external side effects.</p>
               </div>
               <div class="timeline-item">
                 <div class="timeline-date">Step 02</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Designed and iterated the 3D-printed enclosure around the 7-inch display, ThinkCentre, speaker, and assembly constraints, refining tolerances, print orientation, and part connections.</p>
               </div>
               <div class="timeline-item">
                 <div class="timeline-date">Step 03</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Built the FastAPI backend and the fixed 1024×600 dashboard, then deployed the physical interface as an Ubuntu kiosk using Xorg, Openbox, Chromium, and systemd services.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Step 04</div>
+                <p style="margin-top:8px;">Added deterministic command routing, local Ollama inference, browser/device voice input, faster-whisper/whisper transcription, ElevenLabs TTS, and SQLite-backed local state.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Step 05</div>
+                <p style="margin-top:8px;">Added Google authentication/integrations, approval-gated external actions, API-budget/model-routing logic, and an optional Gemini fallback; expanded automated coverage to 92 passing tests.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Step 06</div>
+                <p style="margin-top:8px;">Removed superseded legacy code, synchronized the deployed ThinkCentre with GitHub, and created living architecture/current-state/roadmap documentation plus a review-first development workflow.</p>
               </div>
             </div>
           </article>
 
-          <!-- Demo media -->
+          <!-- Demo media (placeholder until argus-demo.mp4 is added) -->
           <article class="detail-block" id="demo-media">
             <p class="eyebrow">Demo Media</p>
             <h2>See it in motion.</h2>
-            <div class="media-placeholder" style="margin-top:24px;" role="img" aria-label="Demo media placeholder">
-              Demo media placeholder
+            <div class="media-placeholder" style="margin-top:24px;" role="img" aria-label="Demo video placeholder">
+              Demo video — coming soon
             </div>
           </article>
 
@@ -168,14 +180,14 @@
           <article class="detail-block" id="learned">
             <p class="eyebrow">What I Learned</p>
             <h2>What I'd carry forward.</h2>
-            <p>Summarize the key technical lessons from building ARGUS — on-device inference, the hardware/software seam, and anything you'd do differently.</p>
+            <p>ARGUS reinforced that product engineering is a system problem, not a collection of isolated software and CAD tasks. On the hardware side, I learned that enclosure geometry has to be designed around manufacturing realities — print orientation, support material, clearances, assembly access, cables, and real hardware — rather than only the ideal CAD shape. On the software side, I learned to separate deterministic behavior from LLM reasoning, make optional integrations degrade cleanly, and use approval gates, tests, and living documentation to keep an AI-driven system understandable as it grows. The most valuable lesson has been designing the hardware, interface, deployment, and AI architecture together instead of treating them as independent layers.</p>
           </article>
 
           <!-- Next steps -->
           <article class="detail-block" id="next-steps">
             <p class="eyebrow">Next Steps</p>
             <h2>Where it goes next.</h2>
-            <p>List follow-up improvements, open questions, or future directions for ARGUS.</p>
+            <p>Immediate work is to finish UI polish with self-hosted fonts, replace placeholder CPU/TEMP/MEM/LAN values with live ThinkCentre metrics, and verify the Gemini fallback against a real API key. The next capability layer is broader personal context: network files, project documentation, and additional services that ARGUS can read and act on through controlled tools. Voice will move toward a more natural wake/sleep interaction instead of chunked push-to-talk. The major long-term milestone is a review-first developer-agent loop: receive a feature request, delegate implementation to a coding agent on a development branch, run tests, prepare a commit/PR, and present the change for human approval before deployment.</p>
           </article>
 
           <!-- Back to projects -->
