@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arduino Bomb Defusal Game — a two-player embedded code-cracking game with countdown timers, position-aware feedback, and escalating light and sound, built on an Arduino Uno with a KiCad-designed circuit. A project by Dylan Oesch.">
+  <title>Arduino Bomb Defusal Game — Dylan Oesch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#0E0D0B">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="index.html" aria-label="Portfolio home">
+          <span class="brand-name">Dylan Oesch</span>
+          <span class="brand-tag">Software · ML · Embedded</span>
+        </a>
+        <a class="topbar-brand brand-name" href="index.html">Dylan Oesch</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="sidebar-nav" id="sidebar-nav" aria-label="Primary">
+          <a href="index.html#projects">01 · Projects</a>
+          <a href="index.html#work">02 · Work</a>
+          <a href="index.html#about">03 · About</a>
+          <a href="index.html#skills">04 · Skills</a>
+          <a href="index.html#contact">05 · Contact</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-foot">
+        <span class="monogram" aria-hidden="true">DO</span>
+        <span class="sidebar-copy">&copy; <span id="year"></span> — London, ON</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section detail accent-amber">
+        <a class="back-link" href="index.html#projects">&larr; Back to projects</a>
+
+        <div class="detail-head">
+          <div>
+            <p class="label">Project 04 · Personal Project</p>
+            <h1 style="margin-top:12px;">Arduino Bomb Defusal Game</h1>
+            <p class="lede">A two-player, Arduino-based bomb-defusal game where players race to crack a random four-digit code before their countdown timer runs out.</p>
+            <p style="margin-top:20px;"><a class="btn" href="https://github.com/dylan-oesch/bomb-defusal-game" target="_blank" rel="noopener">View on GitHub &rarr;</a></p>
+          </div>
+          <div class="detail-theme">
+            <span class="label">Theme</span>
+            <span class="value">Amber</span>
+          </div>
+        </div>
+
+        <!-- Spec strip -->
+        <div class="spec-strip">
+          <div class="spec"><span class="label">Role</span><span class="value">Solo — developer &amp; circuit designer</span></div>
+          <div class="spec"><span class="label">Date</span><span class="value">Nov 2025 · ~2 weeks</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Arduino · C++ · KiCad · I²C LCD</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">Embedded game prototype</span></div>
+          <div class="spec"><span class="label">Status</span><span class="value">Complete — breadboard prototype</span></div>
+        </div>
+
+        <div class="detail-body">
+          <!-- Overview + Highlights -->
+          <div class="two-col">
+            <div class="detail-block">
+              <h3>Overview</h3>
+              <p style="margin-top:16px;">A two-player, Arduino-based bomb-defusal game in which players compete to identify randomly generated four-digit codes before their individual countdown timers expire. It transforms a digital number-guessing trend into an interactive physical system with real buttons, timed gameplay, visual feedback, and sound.</p>
+              <p>The finished prototype uses an Arduino Uno, a 16×2 I²C LCD, five input buttons, three status LEDs, and a buzzer. I wrote the embedded C++ program, designed the circuit schematic in KiCad, assembled the electronics on a breadboard, and tested the game through repeated play.</p>
+              <p>The final system included two-player turn management, individual countdown timers, duplicate-digit handling, position-aware feedback, progressively faster warning sounds, and dedicated win and timeout states.</p>
+            </div>
+            <div class="detail-block">
+              <h3 style="margin-bottom:0;">Highlights</h3>
+              <ul class="highlight-list">
+                <li>Complete, fully functional two-player embedded game built in about two weeks.</li>
+                <li>Finite-state-machine design with non-blocking <code>millis()</code> timing driving buttons, timers, LEDs, sound, and LCD at once.</li>
+                <li>Position-aware guess evaluation with correct duplicate-digit handling, plus a KiCad-designed circuit.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- By the numbers -->
+          <article class="detail-block" id="impact">
+            <p class="eyebrow">At a glance</p>
+            <h2>The prototype.</h2>
+            <div class="stat-grid">
+              <div class="stat"><span class="num">2</span><span class="cap">players, turn-based</span></div>
+              <div class="stat"><span class="num">5</span><span class="cap">finite-state-machine states</span></div>
+              <div class="stat"><span class="num">120 s</span><span class="cap">countdown per player</span></div>
+              <div class="stat"><span class="num">~2 wks</span><span class="cap">concept to working prototype</span></div>
+            </div>
+          </article>
+
+          <!-- Motivation -->
+          <article class="detail-block" id="motivation">
+            <p class="eyebrow">Motivation</p>
+            <h2>From a screen trend to a physical game.</h2>
+            <p>The project began after I saw a trend involving players attempting to identify hidden number combinations. I wanted to explore how the same concept could become a standalone physical game rather than a verbal or screen-based activity — a compact embedded system that:</p>
+            <ul class="highlight-list" style="margin-top:16px;">
+              <li>Generates random four-digit codes.</li>
+              <li>Lets two players compete.</li>
+              <li>Accepts physical button input.</li>
+              <li>Provides position-aware feedback.</li>
+              <li>Manages separate countdown timers.</li>
+              <li>Creates urgency through lights and sound.</li>
+              <li>Operates without a computer after programming.</li>
+            </ul>
+          </article>
+
+          <!-- Gameplay -->
+          <article class="detail-block" id="gameplay">
+            <p class="eyebrow">Gameplay</p>
+            <h2>How a round plays out.</h2>
+            <ol class="numbered-list">
+              <li>The game waits for the confirmation button to begin.</li>
+              <li>The Arduino generates a random four-digit code for each player.</li>
+              <li>Both players receive an independent 120-second countdown timer.</li>
+              <li>Player 1 uses four buttons to set the four digits of a guess.</li>
+              <li>The confirmation button submits the guess.</li>
+              <li>The game evaluates the guess and displays position-aware feedback.</li>
+              <li>If the guess is incorrect, the result stays visible before control passes to the other player.</li>
+              <li>Each player's timer counts down only during that player's active turn.</li>
+              <li>The warning LED and buzzer speed up as the active player's time decreases.</li>
+              <li>The first player to identify the complete code wins.</li>
+              <li>If a player's timer reaches zero, that player loses and the other wins.</li>
+              <li>The confirmation button begins a new round after the game ends.</li>
+            </ol>
+          </article>
+
+          <!-- Software architecture -->
+          <article class="detail-block" id="architecture">
+            <p class="eyebrow">Software Architecture</p>
+            <h2>A finite state machine.</h2>
+            <p>The game is written in Arduino C++ and organized around a finite-state-machine architecture, with five explicit operating states:</p>
+            <ul class="highlight-list" style="margin-top:16px;">
+              <li><strong><code>WAIT_START</code></strong> — waits for the players to begin a new round.</li>
+              <li><strong><code>P1_TURN</code></strong> — accepts and processes Player 1's guesses.</li>
+              <li><strong><code>P2_TURN</code></strong> — accepts and processes Player 2's guesses.</li>
+              <li><strong><code>SHOW_RESULT</code></strong> — displays feedback before switching players.</li>
+              <li><strong><code>ROUND_OVER</code></strong> — shows the winner or timeout result and waits for a new round.</li>
+            </ul>
+            <p style="margin-top:16px;">Explicit states kept input handling, timing, display output, and turn transitions cleanly separated — important because managing the hand-off between players was the hardest software-design problem in the project.</p>
+          </article>
+
+          <!-- Guess evaluation -->
+          <article class="detail-block" id="evaluation">
+            <p class="eyebrow">Guess-Evaluation Logic</p>
+            <h2>Position-aware, duplicate-safe feedback.</h2>
+            <p>For each submitted digit, the game returns one of three results: correct digit in the correct position, correct digit in the wrong position, or digit not present in the hidden code.</p>
+            <p>The logic handles repeated digits by tracking which positions in both the generated code and the submitted guess have already been matched. Correct-position matches are resolved first; the remaining unmatched digits are then checked for wrong-position matches — so one digit in the hidden code is never counted more than once.</p>
+          </article>
+
+          <!-- Timing, input & feedback -->
+          <article class="detail-block" id="systems">
+            <p class="eyebrow">Timing, Input &amp; Feedback</p>
+            <h2>Everything running at once.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Non-blocking timing on Arduino's <code>millis()</code> polls buttons, ticks timers, drives LEDs and sound, and refreshes the LCD without freezing on long delays.</li>
+              <li>Each player has an independent 120-second timer that counts down only on their turn and pauses while feedback is shown.</li>
+              <li>Every button is software-debounced — tracking raw changes, stable state, and time since the last change — so one physical press registers once.</li>
+              <li>A progressive warning system speeds up the yellow LED and buzzer as time runs low, with a red LED and continuous tone on timeout and a green LED on a successful defuse.</li>
+              <li>The 16×2 I²C LCD shows the current player, guess, feedback, remaining time, and round state, with a custom character for a correct-position checkmark.</li>
+            </ul>
+          </article>
+
+          <!-- Circuit design -->
+          <article class="detail-block" id="circuit">
+            <p class="eyebrow">Circuit Design</p>
+            <h2>Schematic to breadboard.</h2>
+            <p>I designed the electrical schematic in KiCad — documenting the Arduino Uno, I²C LCD, five input buttons, three status LEDs, buzzer, power and ground, and supporting components — then assembled the physical circuit on a breadboard. Fitting the complete system onto the available breadboard while keeping the wiring understandable was one of the project's largest physical challenges.</p>
+          </article>
+
+          <!-- Hardware -->
+          <article class="detail-block" id="hardware">
+            <p class="eyebrow">Hardware</p>
+            <h2>What's on the board.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Arduino Uno</li>
+              <li>16×2 I²C LCD</li>
+              <li>Four digit-selection buttons + one confirmation button</li>
+              <li>Green, yellow, and red status LEDs</li>
+              <li>Piezo buzzer</li>
+              <li>Breadboard, jumper wires, and supporting resistors</li>
+            </ul>
+          </article>
+
+          <!-- Challenges -->
+          <article class="detail-block" id="challenges">
+            <p class="eyebrow">Technical Challenges</p>
+            <h2>The hard parts.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li><strong>Player transitions</strong> — switching immediately after a guess made feedback hard to read; a dedicated <code>SHOW_RESULT</code> state pauses, shows the result, and waits for confirmation before handing off.</li>
+              <li><strong>Breadboard layout</strong> — packing the Arduino, LCD, five buttons, three LEDs, buzzer, and wiring onto one breadboard stayed functional but dense, which shaped the plans for a future version.</li>
+              <li><strong>Coordinating concurrent behaviour</strong> — monitoring buttons, timers, LEDs, sound, LCD, and game state at once, solved with non-blocking timing and explicit states.</li>
+            </ul>
+          </article>
+
+          <!-- My contributions -->
+          <article class="detail-block" id="key-contributions">
+            <p class="eyebrow">My Contributions</p>
+            <h2>What I did.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Developed the original physical-game concept and two-player rules.</li>
+              <li>Selected the Arduino Uno and supporting hardware.</li>
+              <li>Designed the complete circuit schematic in KiCad.</li>
+              <li>Assembled the physical circuit on a breadboard.</li>
+              <li>Wrote the complete embedded C++ program.</li>
+              <li>Implemented random four-digit code generation.</li>
+              <li>Developed the position-aware guess-evaluation algorithm with duplicate-digit handling.</li>
+              <li>Implemented a five-state finite state machine and two-player turn management.</li>
+              <li>Created separate countdown timers using non-blocking <code>millis()</code> timing.</li>
+              <li>Added button-debouncing logic.</li>
+              <li>Built the LCD interface and state rendering, including a custom checkmark character.</li>
+              <li>Developed progressive buzzer and LED feedback, plus win, timeout, and new-round behaviour.</li>
+              <li>Tested through repeated gameplay and diagnosed software and wiring problems.</li>
+              <li>Documented the project with source code, a KiCad schematic, photos, and video.</li>
+            </ul>
+            <p style="margin-top:16px; color: var(--label); font-size: 14px;">ChatGPT was used as a programming support tool while I independently directed, wrote, integrated, and tested the program.</p>
+          </article>
+
+          <!-- What I learned -->
+          <article class="detail-block" id="learned">
+            <p class="eyebrow">Key Engineering Lessons</p>
+            <h2>What I'd carry forward.</h2>
+            <p>This project taught me the value of structuring embedded software around clear operating states. The player-transition problem made the logic hard to manage until a dedicated result state cleanly separated evaluating a guess from passing control to the next player.</p>
+            <p>I also gained practical experience with button debouncing, non-blocking timing, LCD interface limits, electronic feedback systems, and physical circuit organization — and saw that a circuit can be functionally correct yet still hard to package and maintain. A future version should consider portability, wiring organization, and enclosure design from the beginning.</p>
+          </article>
+
+          <!-- Future improvements -->
+          <article class="detail-block" id="future">
+            <p class="eyebrow">Future Improvements</p>
+            <h2>Toward a finished product.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>A compact enclosure with soldered components in place of temporary jumper wires.</li>
+              <li>A more durable internal layout and better portability.</li>
+              <li>Clearer physical organization of buttons and indicators.</li>
+              <li>Easier battery / portable power support.</li>
+              <li>Potentially a custom PCB.</li>
+              <li>Exterior design that reinforces the bomb-defusal theme.</li>
+            </ul>
+          </article>
+
+          <!-- Technologies -->
+          <article class="detail-block" id="technologies">
+            <p class="eyebrow">Technologies &amp; Skills</p>
+            <div class="tech-tags">
+              <span class="tag">Arduino</span>
+              <span class="tag">Embedded C++</span>
+              <span class="tag">Finite State Machine</span>
+              <span class="tag">Non-Blocking Timing</span>
+              <span class="tag">Button Debouncing</span>
+              <span class="tag">Digital Input</span>
+              <span class="tag">I²C LCD</span>
+              <span class="tag">KiCad</span>
+              <span class="tag">Circuit Design</span>
+              <span class="tag">Algorithm Design</span>
+              <span class="tag">Hardware–Software Integration</span>
+              <span class="tag">Iterative Debugging</span>
+              <span class="tag">Git / GitHub</span>
+            </div>
+          </article>
+
+          <!-- Next project -->
+          <a class="next-project accent-red" href="mechanical-arm.html">
+            <div>
+              <span class="label">Next project</span>
+              <span class="value">Mechanical Arm</span>
+            </div>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
