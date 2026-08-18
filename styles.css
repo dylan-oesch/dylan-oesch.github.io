@@ -928,6 +928,77 @@ h3 {
   color: var(--ink);
 }
 
+/* Numbered workflow / lifecycle list */
+.numbered-list {
+  counter-reset: step;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  max-width: 74ch;
+}
+
+.numbered-list li {
+  counter-increment: step;
+  position: relative;
+  padding: 12px 0 12px 46px;
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.numbered-list li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* Quantified-results stat grid (hairline-divided cells) */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.stat {
+  background: var(--surface);
+  padding: 24px 22px;
+}
+
+.stat .num {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.stat .cap {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Technology tag row */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  max-width: 74ch;
+}
+
 .spec-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manufacturing Project Visibility & ClickUp Synchronization — a deployed automation that syncs ~500 manufacturing projects across Epicor, Excel, Power Automate, and ClickUp, cutting per-project update time by 80%. A co-op project by Dylan Oesch at Calhoun Super Structure.">
+  <title>Project Visibility & ClickUp Sync — Dylan Oesch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#0E0D0B">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="index.html" aria-label="Portfolio home">
+          <span class="brand-name">Dylan Oesch</span>
+          <span class="brand-tag">Software · ML · Embedded</span>
+        </a>
+        <a class="topbar-brand brand-name" href="index.html">Dylan Oesch</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="sidebar-nav" id="sidebar-nav" aria-label="Primary">
+          <a href="index.html#projects">01 · Projects</a>
+          <a href="index.html#work">02 · Work</a>
+          <a href="index.html#about">03 · About</a>
+          <a href="index.html#skills">04 · Skills</a>
+          <a href="index.html#contact">05 · Contact</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-foot">
+        <span class="monogram" aria-hidden="true">DO</span>
+        <span class="sidebar-copy">&copy; <span id="year"></span> — London, ON</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section detail accent-cobalt">
+        <a class="back-link" href="index.html#projects">&larr; Back to projects</a>
+
+        <div class="detail-head">
+          <div>
+            <p class="label">Project 03 · Calhoun Super Structure</p>
+            <h1 style="margin-top:12px;">Manufacturing Project Visibility &amp; ClickUp Synchronization</h1>
+            <p class="lede">A deployed automation that gives project managers one synchronized view of ~500 manufacturing projects across Epicor and ClickUp — updating each in about two minutes instead of ten.</p>
+          </div>
+          <div class="detail-theme">
+            <span class="label">Theme</span>
+            <span class="value">Cobalt</span>
+          </div>
+        </div>
+
+        <!-- Spec strip -->
+        <div class="spec-strip">
+          <div class="spec"><span class="label">Role</span><span class="value">Co-op — Software Automation</span></div>
+          <div class="spec"><span class="label">Dates</span><span class="value">May – Aug 2026</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Epicor · Power Automate · ClickUp API · Excel · Power Query</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">ERP + PM automation</span></div>
+          <div class="spec"><span class="label">Status</span><span class="value">Fully deployed</span></div>
+        </div>
+
+        <div class="detail-body">
+          <!-- Overview + Highlights -->
+          <div class="two-col">
+            <div class="detail-block">
+              <h3>Overview</h3>
+              <p style="margin-top:16px;">Designed and fully deployed an automated project-visibility system that synchronizes engineering and manufacturing information across Epicor, engineering spreadsheets, Excel, Power Automate, and ClickUp.</p>
+              <p>Before the system was introduced, updating an individual project required roughly 10 minutes of manual work. The deployed automation performs the same update autonomously in about two minutes — an 80% reduction that saves roughly eight minutes per project.</p>
+              <p>The system manages approximately 500 project records and maintains each one throughout its lifecycle: from initial engineering activity through manufacturing, galvanizing, shipping, and completion.</p>
+            </div>
+            <div class="detail-block">
+              <h3 style="margin-bottom:0;">Highlights</h3>
+              <ul class="highlight-list">
+                <li>Fully deployed automation syncing ~500 manufacturing projects across Epicor, Excel / Power Automate, and ClickUp.</li>
+                <li>Queue-based processing with change detection, validation, retry / recovery, and stale-record handling for reliable production operation.</li>
+                <li>One synchronized project view spanning engineering, manufacturing, galvanizing, shipping, and completion.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- By the numbers -->
+          <article class="detail-block" id="impact">
+            <p class="eyebrow">Impact</p>
+            <h2>By the numbers.</h2>
+            <div class="stat-grid">
+              <div class="stat"><span class="num">80%</span><span class="cap">reduction in per-project update time</span></div>
+              <div class="stat"><span class="num">10 &rarr; 2 min</span><span class="cap">to update a project, manual vs. automated</span></div>
+              <div class="stat"><span class="num">~500</span><span class="cap">project records managed</span></div>
+              <div class="stat"><span class="num">~67 hrs</span><span class="cap">saved per full update cycle</span></div>
+            </div>
+          </article>
+
+          <!-- Problem -->
+          <article class="detail-block" id="problem">
+            <p class="eyebrow">Problem</p>
+            <h2>What needed solving.</h2>
+            <p>Project information was distributed across Epicor, engineering spreadsheets, and other operational data sources. Project managers did not have a single synchronized view showing the current state of engineering, manufacturing, and shipping activity.</p>
+            <p>Manually creating and updating project records required roughly 10 minutes per project. At a scale of about 500 records, this created substantial repetitive work and made it difficult to maintain consistent, current project information.</p>
+            <p>The synchronization also had to account for changing source data, incomplete records, processing failures, duplicate updates, long-running flows, and projects transitioning from active work into completion.</p>
+          </article>
+
+          <!-- Solution -->
+          <article class="detail-block" id="solution">
+            <p class="eyebrow">Solution</p>
+            <h2>How I approached it.</h2>
+            <p>I developed a multi-stage automation architecture that collected engineering and Epicor data, detected new or changed projects, queued the required work, and synchronized the results into structured ClickUp projects.</p>
+            <p>Each project contained a summary and detailed engineering and manufacturing milestones. The system updated dates, statuses, custom fields, and lifecycle information based on the latest available source data.</p>
+            <p>To improve reliability, I incorporated project-state tracking, queued processing, change detection, validation, retry and failure handling, stale-record recovery, controlled batching, and completion-handoff logic.</p>
+          </article>
+
+          <!-- System architecture -->
+          <article class="detail-block" id="system-design">
+            <p class="eyebrow">System Architecture</p>
+            <h2>Five layers, one flow.</h2>
+            <div class="spec-grid" style="margin-top:24px;">
+              <div class="spec-card">
+                <span class="label">Epicor Data Layer</span>
+                <p>A Business Activity Query collects order info, need-by dates, manufacturing start/complete dates and status, job counts, galvanizing requirements and completion, and shipping status and dates.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Engineering Data Layer</span>
+                <p>Engineering spreadsheet data supplies engineering status, order dates, and project-identification fields.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">State &amp; Queue Layer</span>
+                <p>Excel tables hold configuration, the sync queue, project state, an Epicor snapshot, refresh status, and an error log — used to tell whether a project is new, changed, already synced, or processing.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Automation Layer</span>
+                <p>Power Automate flows handle Epicor refresh, queue generation, stale-processing recovery, selected-project processing, ClickUp creation and updates, milestone sync, validation, error recovery, and completed-project handoff.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">ClickUp Layer</span>
+                <p>The project-management interface: each record holds a summary task and structured engineering and manufacturing milestones, so managers see current state without consolidating systems by hand.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project lifecycle -->
+          <article class="detail-block" id="lifecycle">
+            <p class="eyebrow">Project Lifecycle</p>
+            <h2>How a project moves through the system.</h2>
+            <ol class="numbered-list">
+              <li>Engineering and Epicor data is refreshed.</li>
+              <li>Source records are normalized and validated.</li>
+              <li>New or changed projects are identified.</li>
+              <li>Required work is added to the synchronization queue.</li>
+              <li>Queue records move through pending, processing, success, or failure states.</li>
+              <li>New ClickUp project structures are created from a controlled template.</li>
+              <li>Existing project dates, statuses, and custom fields are updated.</li>
+              <li>Manufacturing, galvanizing, and shipping milestones are synchronized.</li>
+              <li>Errors are logged and recoverable failures are retried or reset.</li>
+              <li>Shipped projects are transitioned from active to completed project structures.</li>
+            </ol>
+          </article>
+
+          <!-- Key contributions -->
+          <article class="detail-block" id="key-contributions">
+            <p class="eyebrow">My Contributions</p>
+            <h2>What I did.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Worked with the project manager to understand the project-visibility requirements and expected ClickUp structure.</li>
+              <li>Designed the overall synchronization architecture and project lifecycle.</li>
+              <li>Developed an Epicor Business Activity Query to collect engineering, manufacturing, galvanizing, and shipping information.</li>
+              <li>Combined Epicor data with engineering spreadsheet information.</li>
+              <li>Created the Excel-based state, queue, configuration, snapshot, refresh-status, and error-log structures.</li>
+              <li>Developed the Power Automate flows for refreshing data, generating queue records, processing projects, and handling completed projects.</li>
+              <li>Created logic to detect new projects and identify material changes to existing records.</li>
+              <li>Built queued processing with pending, processing, success, and failure states.</li>
+              <li>Added batch identifiers and controlled processing to support long-running operations.</li>
+              <li>Developed ClickUp project creation and update logic, including summary tasks and detailed engineering and manufacturing subtasks.</li>
+              <li>Mapped order dates, target dates, manufacturing milestones, galvanizing requirements, and shipping information into ClickUp.</li>
+              <li>Implemented validation for project dates and milestone sequences.</li>
+              <li>Added failure handling, error logging, and stale-processing recovery.</li>
+              <li>Developed logic to transition shipped projects from active to completed structures.</li>
+              <li>Troubleshot API payloads, source-data inconsistencies, date conversion, action-nesting limits, and timeout conditions.</li>
+              <li>Performed reset, synchronization, and lifecycle testing across representative and production records.</li>
+              <li>Coordinated limited input from IT while independently completing most of the architecture, flow development, testing, and troubleshooting.</li>
+              <li>Documented the system for future operation and engineering handoff.</li>
+            </ul>
+          </article>
+
+          <!-- Results -->
+          <article class="detail-block" id="results">
+            <p class="eyebrow">Results</p>
+            <h2>What it delivered.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Fully deployed the project-visibility system into production.</li>
+              <li>Replaced repetitive manual updates with autonomous processing across ~500 records.</li>
+              <li>Created a consistent project view spanning engineering, manufacturing, galvanizing, shipping, and completion.</li>
+              <li>Improved project-data consistency by synchronizing information from controlled source systems.</li>
+              <li>Added queue, validation, state tracking, and recovery mechanisms to support reliable production operation.</li>
+            </ul>
+          </article>
+
+          <!-- What I learned -->
+          <article class="detail-block" id="learned">
+            <p class="eyebrow">Key Engineering Lessons</p>
+            <h2>What I'd carry forward.</h2>
+            <p>This project demonstrated that a production automation system requires more than connecting two APIs. The solution had to maintain state over time, detect meaningful source changes, prevent duplicate work, handle incomplete data, and recover from partial failures.</p>
+            <p>I gained experience designing long-running workflow automation, debugging complex date and source-data issues, managing API constraints, and building a system that remained understandable after growing across multiple flows and data sources.</p>
+            <p>The project also strengthened my ability to work directly with a stakeholder, translate operational requirements into technical architecture, and independently carry a system from concept through production deployment.</p>
+          </article>
+
+          <!-- Technologies -->
+          <article class="detail-block" id="technologies">
+            <p class="eyebrow">Technologies &amp; Skills</p>
+            <div class="tech-tags">
+              <span class="tag">Epicor</span>
+              <span class="tag">Epicor BAQ</span>
+              <span class="tag">Power Automate</span>
+              <span class="tag">Power Automate Desktop</span>
+              <span class="tag">ClickUp API</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">JSON</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Workflow Orchestration</span>
+              <span class="tag">Queue Processing</span>
+              <span class="tag">State Management</span>
+              <span class="tag">Change Detection</span>
+              <span class="tag">Retry &amp; Recovery</span>
+              <span class="tag">Systems Integration</span>
+              <span class="tag">Technical Documentation</span>
+            </div>
+          </article>
+
+          <!-- Next project -->
+          <a class="next-project accent-red" href="mechanical-arm.html">
+            <div>
+              <span class="label">Next project</span>
+              <span class="value">Mechanical Arm</span>
+            </div>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

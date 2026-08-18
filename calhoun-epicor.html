@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SolidWorks-to-Epicor Manufacturing Middleware — a Python application that automates engineering-data transfer from SolidWorks assemblies into Epicor ERP, safely and traceably. A project by Dylan Oesch.">
+  <meta name="description" content="SolidWorks-to-Epicor Middleware — a Python desktop application that automates the transfer of engineering data from SolidWorks assemblies into Epicor, with dry-run review, validation, and post-write verification. A co-op project by Dylan Oesch at Calhoun Super Structure.">
   <title>SolidWorks-to-Epicor Middleware — Dylan Oesch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +51,9 @@
 
         <div class="detail-head">
           <div>
-            <p class="label">Project 03</p>
-            <h1 style="margin-top:12px;">SolidWorks-to-Epicor Manufacturing Middleware</h1>
-            <p class="lede">A Python middleware that automates the transfer of engineering data from SolidWorks assemblies into Epicor ERP — safely and traceably.</p>
+            <p class="label">Project 02 · Calhoun Super Structure</p>
+            <h1 style="margin-top:12px;">SolidWorks-to-Epicor Middleware</h1>
+            <p class="lede">A Python desktop middleware that automates the transfer of engineering data from SolidWorks assemblies into Epicor — controlled, reviewable, and verified.</p>
           </div>
           <div class="detail-theme">
             <span class="label">Theme</span>
@@ -63,10 +63,11 @@
 
         <!-- Spec strip -->
         <div class="spec-strip">
-          <div class="spec"><span class="label">Role</span><span class="value">Solo — design &amp; development</span></div>
-          <div class="spec"><span class="label">Year</span><span class="value">Summer 2026</span></div>
-          <div class="spec"><span class="label">Tools</span><span class="value">Python · SolidWorks · Epicor ERP · REST APIs · Manufacturing Automation · Desktop UI</span></div>
-          <div class="spec"><span class="label">Type</span><span class="value">ERP integration / middleware</span></div>
+          <div class="spec"><span class="label">Role</span><span class="value">Co-op — Software Automation</span></div>
+          <div class="spec"><span class="label">Dates</span><span class="value">May – Aug 2026</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Python · SolidWorks · Epicor · REST APIs · Git</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">CAD-to-ERP integration</span></div>
+          <div class="spec"><span class="label">Status</span><span class="value">Deployed — final refinement</span></div>
         </div>
 
         <!-- Overview + Highlights -->
@@ -74,15 +75,16 @@
           <div class="two-col">
             <div class="detail-block">
               <h3>Overview</h3>
-              <p style="margin-top:16px;">A Python desktop middleware that automates the transfer of engineering data from SolidWorks assemblies into Epicor ERP. It replaced a largely manual workflow in which engineers had to review assembly information and recreate the corresponding parts, revisions, bills of materials, and manufacturing operations inside Epicor.</p>
-              <p>The application scans a SolidWorks assembly, extracts and organizes engineering data — part numbers, descriptions, materials, weights, assembly relationships, BOM structures, revisions, and operations — and presents it through a desktop review interface before any ERP changes are made. Engineers can review and edit defined fields while the system validates the data and determines what already exists in Epicor.</p>
+              <p style="margin-top:16px;">Independently designed and developed a Python desktop middleware application that automates the transfer of engineering information from SolidWorks assemblies into Epicor.</p>
+              <p>The previous process required users to manually inspect assembly information and recreate the corresponding parts, revisions, bills of materials, and manufacturing operations in Epicor. The application reads the SolidWorks assembly, organizes the required engineering data, checks what already exists in Epicor, and prepares the required creation or update actions.</p>
+              <p>The system was designed to make ERP automation controlled and reviewable. It includes dry-run functionality, validation, dependency checks, error handling, and post-write verification, so users can review proposed changes before modifying production engineering data. It is deployed in a working state and in final refinement ahead of full production use.</p>
             </div>
             <div class="detail-block">
               <h3 style="margin-bottom:0;">Highlights</h3>
               <ul class="highlight-list">
-                <li>Safe, traceable ERP automation — existence, dependency, and validation checks, dry-run and preflight workflows, live-write protection, logging, and post-write verification.</li>
-                <li>End-to-end engineering-data extraction — parts, revisions, BOMs, and manufacturing operations pulled from hierarchical SolidWorks assemblies.</li>
-                <li>Editable review-and-validate workflow that lets engineers check and correct data before anything is written to Epicor.</li>
+                <li>Deployed, working middleware that turns SolidWorks assemblies into controlled Epicor create/update actions.</li>
+                <li>Dry-run review, dependency ordering, validation, and post-write verification before any production write.</li>
+                <li>Owned end to end — requirements, architecture, development, testing, deployment, and documentation.</li>
               </ul>
             </div>
           </div>
@@ -91,91 +93,106 @@
           <article class="detail-block" id="problem">
             <p class="eyebrow">Problem</p>
             <h2>What needed solving.</h2>
-            <p>The existing workflow was largely manual: engineers reviewed assembly information and recreated the corresponding parts, revisions, bills of materials, and manufacturing operations inside Epicor by hand. That process was repetitive and slow, invited inconsistency, and left room for errors to reach the live ERP environment.</p>
+            <p>Engineering data already existed within SolidWorks assemblies, but transferring that information into Epicor required substantial manual review and data entry. Users had to identify required parts, verify revisions, recreate bills of materials and manufacturing operations, and ensure that dependent records existed in the correct order.</p>
+            <p>This process was repetitive, time-consuming, and vulnerable to inconsistent data entry. Automating it also introduced risk, because incomplete or incorrectly ordered writes could affect important manufacturing information in Epicor.</p>
           </article>
 
           <!-- Solution -->
           <article class="detail-block" id="solution">
             <p class="eyebrow">Solution</p>
             <h2>How I approached it.</h2>
-            <p>A major focus of the project was making ERP automation safe and traceable rather than simply automating API calls. The application performs Epicor existence checks, dependency and validation checks, prevents known bad data from reaching the live environment, supports dry-run and preflight workflows, and verifies planned actions before executing writes. Import results, errors, and relevant workflow activity are logged to provide an audit trail and simplify troubleshooting.</p>
+            <p>I developed a middleware layer between SolidWorks and Epicor that extracted and organized assembly information, compared it against existing Epicor records, and generated a controlled plan of the required actions.</p>
+            <p>Rather than immediately writing every detected change, the application let users review the proposed operations through a desktop interface. Dry-run functionality, dependency validation, and post-write verification were incorporated to reduce the risk associated with automating ERP modifications.</p>
           </article>
 
-          <!-- System design -->
-          <article class="detail-block" id="system-design">
-            <p class="eyebrow">System Design</p>
-            <h2>A layered architecture.</h2>
-            <p style="margin-bottom:24px;">The application uses a layered architecture that separates concerns, keeping the system maintainable and extensible for additional ERP automation workflows.</p>
-            <div class="spec-grid">
-              <div class="spec-card">
-                <span class="label">User Interface</span>
-                <p>Desktop review screen where engineers inspect and edit extracted data before any ERP change is made.</p>
-              </div>
-              <div class="spec-card">
-                <span class="label">SolidWorks Extraction</span>
-                <p>Scans assemblies and pulls part numbers, descriptions, materials, weights, relationships, BOM structures, revisions, and operations.</p>
-              </div>
-              <div class="spec-card">
-                <span class="label">Workflow &amp; Business Logic</span>
-                <p>Validation, existence and dependency checks, dry-run/preflight, and the rules that decide what is safe to write.</p>
-              </div>
-              <div class="spec-card">
-                <span class="label">Shared Engineering Models</span>
-                <p>Common data models for parts, revisions, BOMs, and operations, used consistently across the application.</p>
-              </div>
-              <div class="spec-card">
-                <span class="label">Epicor Service Communication</span>
-                <p>REST API and business-service calls that perform verified writes into Epicor ERP.</p>
-              </div>
-            </div>
+          <!-- System workflow -->
+          <article class="detail-block" id="workflow">
+            <p class="eyebrow">System Workflow</p>
+            <h2>How it runs, end to end.</h2>
+            <ol class="numbered-list">
+              <li>The user selects or opens a SolidWorks assembly.</li>
+              <li>The application extracts the required assembly and engineering information.</li>
+              <li>The data is normalized into an internal structure.</li>
+              <li>Existing Epicor parts, revisions, BOMs, and manufacturing operations are identified.</li>
+              <li>The application determines which actions are required.</li>
+              <li>Dependencies and validation conditions are checked.</li>
+              <li>The user reviews a summary or performs a dry run.</li>
+              <li>Approved actions are sent to Epicor in the required sequence.</li>
+              <li>The application verifies the resulting Epicor records.</li>
+              <li>Errors and results are recorded for review.</li>
+            </ol>
           </article>
 
           <!-- Key contributions -->
           <article class="detail-block" id="key-contributions">
-            <p class="eyebrow">Key Contributions</p>
+            <p class="eyebrow">My Contributions</p>
             <h2>What I did.</h2>
             <ul class="highlight-list" style="margin-top:8px;">
-              <li>Developed the Python desktop application and overall system architecture.</li>
-              <li>Integrated SolidWorks assembly data with Epicor through API and business-service communication.</li>
-              <li>Automated processing of parts, revisions, BOMs, and manufacturing operations.</li>
-              <li>Built hierarchical assembly scanning and engineering-data extraction.</li>
-              <li>Created editable review and validation workflows before ERP submission.</li>
-              <li>Implemented existing-record, duplicate, dependency, and upload-error checks.</li>
-              <li>Added dry-run, preflight, live-write protection, logging, and post-write verification.</li>
-              <li>Designed the system around modular workflows and Epicor services to support future expansion.</li>
-              <li>Reduced repetitive manual ERP data entry while improving consistency and error detection.</li>
+              <li>Gathered requirements from my supervisor and translated the existing manual process into a structured software workflow.</li>
+              <li>Designed the overall application architecture and end-to-end processing sequence.</li>
+              <li>Developed the Python desktop application and user interface.</li>
+              <li>Extracted and organized engineering data from SolidWorks assemblies.</li>
+              <li>Developed processing logic for parts, revisions, bills of materials, and manufacturing operations.</li>
+              <li>Integrated the application with Epicor through API and business-service communication.</li>
+              <li>Created logic to determine which records already existed and which required creation or modification.</li>
+              <li>Implemented dependency checks to ensure records were processed in a safe order.</li>
+              <li>Developed dry-run functionality that displayed intended actions before making Epicor changes.</li>
+              <li>Added validation summaries, error handling, and user-facing diagnostic information.</li>
+              <li>Implemented post-write verification to confirm that intended changes were successfully applied.</li>
+              <li>Tested the application using representative engineering assemblies.</li>
+              <li>Deployed the working application and completed final refinements ahead of full production use.</li>
+              <li>Produced documentation to support future maintenance and engineering handoff.</li>
             </ul>
           </article>
 
-          <!-- Build process -->
-          <article class="detail-block" id="build-process">
-            <p class="eyebrow">Build Process</p>
-            <h2>How it came together.</h2>
-            <div class="timeline" style="margin-top:24px;">
-              <div class="timeline-item">
-                <div class="timeline-date">Step 01</div>
-                <p style="margin-top:8px;">Worked with manufacturing and engineering employees to understand the existing manual SolidWorks-to-Epicor process.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 02</div>
-                <p style="margin-top:8px;">Translated Epicor business requirements into software logic and a layered application architecture.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 03</div>
-                <p style="margin-top:8px;">Built the desktop app: assembly scanning, engineering-data extraction, the review interface, validation, and Epicor service communication.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 04</div>
-                <p style="margin-top:8px;">Tested the integration against real assemblies and refined the workflow for internal deployment.</p>
-              </div>
+          <!-- Results -->
+          <article class="detail-block" id="results">
+            <p class="eyebrow">Results</p>
+            <h2>What it delivered.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Produced a working, deployed application capable of translating SolidWorks assembly information into controlled Epicor actions.</li>
+              <li>Reduced the need to manually interpret and recreate engineering structures inside Epicor.</li>
+              <li>Added review, validation, and verification controls to make the automation safer for manufacturing data.</li>
+              <li>Demonstrated the ability to independently own a professional software project from requirements and architecture through development, testing, deployment, and documentation.</li>
+              <li>Created a maintainable foundation for broader production use following final refinements.</li>
+            </ul>
+          </article>
+
+          <!-- What I learned -->
+          <article class="detail-block" id="learned">
+            <p class="eyebrow">Key Engineering Lessons</p>
+            <h2>What I'd carry forward.</h2>
+            <p>This project reinforced that automation involving production engineering data requires more than successful API communication. The application had to account for dependency order, incomplete source data, existing Epicor records, validation failures, and partial-write conditions.</p>
+            <p>I learned to treat dry runs, verification, and failure handling as core system features rather than secondary improvements. I also gained experience translating manufacturing and engineering processes into structured software while working across CAD, ERP, and production-system boundaries.</p>
+          </article>
+
+          <!-- Technologies -->
+          <article class="detail-block" id="technologies">
+            <p class="eyebrow">Technologies &amp; Skills</p>
+            <div class="tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Desktop App</span>
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Epicor</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">CAD-to-ERP</span>
+              <span class="tag">BOM / BOO Logic</span>
+              <span class="tag">Data Transformation</span>
+              <span class="tag">Dependency Management</span>
+              <span class="tag">Dry-Run Architecture</span>
+              <span class="tag">Validation</span>
+              <span class="tag">Post-Write Verification</span>
+              <span class="tag">Manufacturing Systems</span>
+              <span class="tag">Technical Documentation</span>
+              <span class="tag">Git</span>
             </div>
           </article>
 
-          <!-- Back to projects -->
-          <a class="next-project accent-darkred" href="index.html#projects">
+          <!-- Next project -->
+          <a class="next-project accent-cobalt" href="clickup-sync.html">
             <div>
-              <span class="label">More work</span>
-              <span class="value">All projects</span>
+              <span class="label">Next project</span>
+              <span class="value">Project Visibility &amp; ClickUp Sync</span>
             </div>
             <span class="arrow" aria-hidden="true">&rarr;</span>
           </a>
