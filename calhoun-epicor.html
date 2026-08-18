@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Calhoun Epicor Middleware — a project by Dylan Oesch.">
-  <title>Calhoun Epicor Middleware — Dylan Oesch</title>
+  <meta name="description" content="SolidWorks-to-Epicor Manufacturing Middleware — a Python application that automates engineering-data transfer from SolidWorks assemblies into Epicor ERP, safely and traceably. A project by Dylan Oesch.">
+  <title>SolidWorks-to-Epicor Middleware — Dylan Oesch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -50,8 +50,8 @@
         <div class="detail-head">
           <div>
             <p class="label">Project 03</p>
-            <h1 style="margin-top:12px;">Calhoun Epicor Middleware</h1>
-            <p class="lede">A one-line summary of the project — what it is and why it matters.</p>
+            <h1 style="margin-top:12px;">SolidWorks-to-Epicor Manufacturing Middleware</h1>
+            <p class="lede">A Python middleware that automates the transfer of engineering data from SolidWorks assemblies into Epicor ERP — safely and traceably.</p>
           </div>
           <div class="detail-theme">
             <span class="label">Theme</span>
@@ -61,26 +61,26 @@
 
         <!-- Spec strip -->
         <div class="spec-strip">
-          <div class="spec"><span class="label">Role</span><span class="value">TBD</span></div>
+          <div class="spec"><span class="label">Role</span><span class="value">Solo — design &amp; development</span></div>
           <div class="spec"><span class="label">Year</span><span class="value">TBD</span></div>
-          <div class="spec"><span class="label">Tools</span><span class="value">Epicor · TBD</span></div>
-          <div class="spec"><span class="label">Type</span><span class="value">Integration / middleware</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Python · SolidWorks · Epicor ERP · REST APIs · Manufacturing Automation · Desktop UI</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">ERP integration / middleware</span></div>
         </div>
 
-        <!-- Hero figure -->
+        <!-- Hero figure (placeholder until a screenshot is added) -->
         <figure class="figure">
           <div class="figure-frame">
             <div class="figure-left">
               <div class="bar"></div>
               <div class="bar-muted" style="width:85%;"></div>
               <div class="bar-muted" style="width:70%;"></div>
-              <div class="cap">interface, themed</div>
+              <div class="cap">review interface, themed</div>
             </div>
             <div class="figure-right">
-              <span>Middleware view</span>
+              <span>middleware view</span>
             </div>
           </div>
-          <figcaption class="figcaption">Fig. 01 — replace with a real screenshot or diagram</figcaption>
+          <figcaption class="figcaption">Fig. 01 — desktop review interface (screenshot coming soon)</figcaption>
         </figure>
 
         <!-- Overview + Highlights -->
@@ -88,89 +88,104 @@
           <div class="two-col">
             <div class="detail-block">
               <h3>Overview</h3>
-              <p style="margin-top:16px;">First paragraph — the context, the systems involved, and what the middleware connects.</p>
-              <p>Second paragraph — how you approached it and what you owned end to end.</p>
+              <p style="margin-top:16px;">A Python desktop middleware that automates the transfer of engineering data from SolidWorks assemblies into Epicor ERP. It replaced a largely manual workflow in which engineers had to review assembly information and recreate the corresponding parts, revisions, bills of materials, and manufacturing operations inside Epicor.</p>
+              <p>The application scans a SolidWorks assembly, extracts and organizes engineering data — part numbers, descriptions, materials, weights, assembly relationships, BOM structures, revisions, and operations — and presents it through a desktop review interface before any ERP changes are made. Engineers can review and edit defined fields while the system validates the data and determines what already exists in Epicor.</p>
             </div>
             <div class="detail-block">
               <h3 style="margin-bottom:0;">Highlights</h3>
               <ul class="highlight-list">
-                <li>Highlight one</li>
-                <li>Highlight two</li>
-                <li>Highlight three</li>
+                <li>Safe, traceable ERP automation — existence, dependency, and validation checks, dry-run and preflight workflows, live-write protection, logging, and post-write verification.</li>
+                <li>End-to-end engineering-data extraction — parts, revisions, BOMs, and manufacturing operations pulled from hierarchical SolidWorks assemblies.</li>
+                <li>Editable review-and-validate workflow that lets engineers check and correct data before anything is written to Epicor.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Problem -->
           <article class="detail-block" id="problem">
             <p class="eyebrow">Problem</p>
             <h2>What needed solving.</h2>
-            <p>Describe the context, the systems that needed to talk to each other, and the challenge this project addressed.</p>
+            <p>The existing workflow was largely manual: engineers reviewed assembly information and recreated the corresponding parts, revisions, bills of materials, and manufacturing operations inside Epicor by hand. That process was repetitive and slow, invited inconsistency, and left room for errors to reach the live ERP environment.</p>
           </article>
 
+          <!-- Solution -->
           <article class="detail-block" id="solution">
             <p class="eyebrow">Solution</p>
             <h2>How I approached it.</h2>
-            <p>Describe the approach, the core decisions, and how the middleware responded to the problem.</p>
+            <p>A major focus of the project was making ERP automation safe and traceable rather than simply automating API calls. The application performs Epicor existence checks, dependency and validation checks, prevents known bad data from reaching the live environment, supports dry-run and preflight workflows, and verifies planned actions before executing writes. Import results, errors, and relevant workflow activity are logged to provide an audit trail and simplify troubleshooting.</p>
           </article>
 
+          <!-- System design -->
           <article class="detail-block" id="system-design">
             <p class="eyebrow">System Design</p>
-            <h2>How it fits together.</h2>
-            <div class="spec-grid" style="margin-top:24px;">
+            <h2>A layered architecture.</h2>
+            <p style="margin-bottom:24px;">The application uses a layered architecture that separates concerns, keeping the system maintainable and extensible for additional ERP automation workflows.</p>
+            <div class="spec-grid">
               <div class="spec-card">
-                <span class="label">Source</span>
-                <p>Where data originates before it reaches the middleware.</p>
+                <span class="label">User Interface</span>
+                <p>Desktop review screen where engineers inspect and edit extracted data before any ERP change is made.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Middleware</span>
-                <p>The integration layer — transform, route, validate.</p>
+                <span class="label">SolidWorks Extraction</span>
+                <p>Scans assemblies and pulls part numbers, descriptions, materials, weights, relationships, BOM structures, revisions, and operations.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Epicor</span>
-                <p>How data lands in Epicor and what it drives.</p>
+                <span class="label">Workflow &amp; Business Logic</span>
+                <p>Validation, existence and dependency checks, dry-run/preflight, and the rules that decide what is safe to write.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Shared Engineering Models</span>
+                <p>Common data models for parts, revisions, BOMs, and operations, used consistently across the application.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Epicor Service Communication</span>
+                <p>REST API and business-service calls that perform verified writes into Epicor ERP.</p>
               </div>
             </div>
           </article>
 
+          <!-- Key contributions -->
+          <article class="detail-block" id="key-contributions">
+            <p class="eyebrow">Key Contributions</p>
+            <h2>What I did.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Developed the Python desktop application and overall system architecture.</li>
+              <li>Integrated SolidWorks assembly data with Epicor through API and business-service communication.</li>
+              <li>Automated processing of parts, revisions, BOMs, and manufacturing operations.</li>
+              <li>Built hierarchical assembly scanning and engineering-data extraction.</li>
+              <li>Created editable review and validation workflows before ERP submission.</li>
+              <li>Implemented existing-record, duplicate, dependency, and upload-error checks.</li>
+              <li>Added dry-run, preflight, live-write protection, logging, and post-write verification.</li>
+              <li>Designed the system around modular workflows and Epicor services to support future expansion.</li>
+              <li>Reduced repetitive manual ERP data entry while improving consistency and error detection.</li>
+            </ul>
+          </article>
+
+          <!-- Build process -->
           <article class="detail-block" id="build-process">
             <p class="eyebrow">Build Process</p>
             <h2>How it came together.</h2>
             <div class="timeline" style="margin-top:24px;">
               <div class="timeline-item">
                 <div class="timeline-date">Step 01</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Worked with manufacturing and engineering employees to understand the existing manual SolidWorks-to-Epicor process.</p>
               </div>
               <div class="timeline-item">
                 <div class="timeline-date">Step 02</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Translated Epicor business requirements into software logic and a layered application architecture.</p>
               </div>
               <div class="timeline-item">
                 <div class="timeline-date">Step 03</div>
-                <p style="margin-top:8px;">Placeholder build-process note.</p>
+                <p style="margin-top:8px;">Built the desktop app: assembly scanning, engineering-data extraction, the review interface, validation, and Epicor service communication.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Step 04</div>
+                <p style="margin-top:8px;">Tested the integration against real assemblies and refined the workflow for internal deployment.</p>
               </div>
             </div>
           </article>
 
-          <article class="detail-block" id="demo-media">
-            <p class="eyebrow">Demo Media</p>
-            <h2>See it in action.</h2>
-            <div class="media-placeholder" style="margin-top:24px;" role="img" aria-label="Demo media placeholder">
-              Demo media placeholder
-            </div>
-          </article>
-
-          <article class="detail-block" id="learned">
-            <p class="eyebrow">What I Learned</p>
-            <h2>What I'd carry forward.</h2>
-            <p>Summarize the key technical, product, or process lessons from the project.</p>
-          </article>
-
-          <article class="detail-block" id="next-steps">
-            <p class="eyebrow">Next Steps</p>
-            <h2>Where it goes next.</h2>
-            <p>List follow-up improvements, open questions, or future directions for the project.</p>
-          </article>
-
+          <!-- Back to projects -->
           <a class="next-project accent-darkred" href="index.html#projects">
             <div>
               <span class="label">More work</span>
