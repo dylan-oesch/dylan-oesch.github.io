@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ARGUS — a physical, local-first AI assistant that unifies on-device reasoning, voice, integrations, and custom hardware. A project by Dylan Oesch.">
+  <meta name="description" content="ARGUS — a physical, local-first AI assistant combining local language-model reasoning, voice interaction, Google integrations, and a custom 3D-printed enclosure on dedicated hardware. A project by Dylan Oesch.">
   <title>ARGUS — Dylan Oesch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +51,9 @@
 
         <div class="detail-head">
           <div>
-            <p class="label">Project 01</p>
+            <p class="label">Project 01 · Personal Project</p>
             <h1 style="margin-top:12px;">ARGUS</h1>
-            <p class="lede">A physical, local-first AI assistant that uses a dedicated computer as a hub for reasoning, voice, personal tools, and controlled cloud capabilities.</p>
+            <p class="lede">Adaptive Reasoning and Guidance Utility System — a physical, local-first AI assistant that runs local language-model reasoning, voice, and Google integrations inside custom-built hardware.</p>
           </div>
           <div class="detail-theme">
             <span class="label">Theme</span>
@@ -63,140 +63,238 @@
 
         <!-- Spec strip -->
         <div class="spec-strip">
-          <div class="spec"><span class="label">Role</span><span class="value">Solo — system architecture, software, hardware &amp; product design</span></div>
-          <div class="spec"><span class="label">Year</span><span class="value">2026</span></div>
-          <div class="spec"><span class="label">Tools</span><span class="value">Python · FastAPI · JavaScript · Ollama (Llama 3.2) · SQLite · ElevenLabs · Google APIs · Ubuntu/Linux · systemd · Git/GitHub</span></div>
-          <div class="spec"><span class="label">Type</span><span class="value">Local AI assistant + hardware system</span></div>
+          <div class="spec"><span class="label">Role</span><span class="value">Solo — architecture, software &amp; CAD</span></div>
+          <div class="spec"><span class="label">Dates</span><span class="value">Summer 2026 – Present</span></div>
+          <div class="spec"><span class="label">Tools</span><span class="value">Python · FastAPI · Ollama (Llama 3.2) · Faster-Whisper · ElevenLabs · Linux</span></div>
+          <div class="spec"><span class="label">Type</span><span class="value">Local AI + physical computing</span></div>
+          <div class="spec"><span class="label">Status</span><span class="value">Gen 1 deployed — in development</span></div>
         </div>
 
-        <!-- Hero figure (placeholder until argus-hero.jpg is added) -->
-        <figure class="figure">
-          <div class="figure-frame">
-            <div class="figure-left">
-              <div class="bar"></div>
-              <div class="bar-muted" style="width:85%;"></div>
-              <div class="bar-muted" style="width:70%;"></div>
-              <div class="cap">central hub, themed</div>
-            </div>
-            <div class="figure-right">
-              <span>ARGUS view</span>
-            </div>
-          </div>
-          <figcaption class="figcaption">Fig. 01 — finished ARGUS unit: angled 7-inch display in a custom enclosure (photo coming soon)</figcaption>
-        </figure>
-
-        <!-- Overview + Highlights -->
         <div class="detail-body">
+          <!-- Overview + Highlights -->
           <div class="two-col">
             <div class="detail-block">
               <h3>Overview</h3>
-              <p style="margin-top:16px;">ARGUS (Adaptive Reasoning and Guidance Utility System) is a local-first personal AI assistant built as a physical device rather than another desktop chat window. A Lenovo ThinkCentre runs the FastAPI backend, local Ollama model, SQLite data store, voice services, and a dedicated 7-inch 1024×600 interface. The core interaction loop works locally, while cloud models and external services are treated as optional capability layers rather than requirements.</p>
-              <p>The system is designed as an orchestrator: common requests are handled by deterministic Python logic, open-ended requests fall back to the local model, and consequential external actions are placed behind explicit human approval. I designed the architecture, interface, deployment, voice/model integrations, development workflow, and 3D-printed enclosure, treating the software and physical product as one system.</p>
+              <p style="margin-top:16px;">ARGUS is a physical, local-first AI assistant that combines local language-model reasoning, voice interaction, Google service integrations, controlled automation, and a custom interface within a dedicated hardware system.</p>
+              <p>Unlike a chatbot accessed through a laptop or browser, ARGUS is a persistent physical product. A Lenovo ThinkCentre runs the FastAPI backend, local Ollama model, voice services, and dashboard, connected to a seven-inch touchscreen inside a custom 3D-printed enclosure I designed and manufactured.</p>
+              <p>The first physical assembly has been printed, assembled, and deployed. ARGUS captures speech, transcribes it with Faster-Whisper, reasons with a local Llama 3.2 model, and replies in speech via ElevenLabs — with Google Tasks, Calendar, and Gmail integrated behind controlled approval for consequential actions.</p>
             </div>
             <div class="detail-block">
               <h3 style="margin-bottom:0;">Highlights</h3>
               <ul class="highlight-list">
-                <li>Deployed physical kiosk — FastAPI/uvicorn, Xorg, Openbox, and Chromium are managed by systemd and enabled at boot on the ThinkCentre.</li>
-                <li>Local-first reasoning and voice — deterministic command routing, local Ollama llama3.2 fallback, browser push-to-talk transcription, and ElevenLabs TTS with graceful text-only fallback.</li>
-                <li>Safety and integrations — SQLite-backed approvals, Google Tasks/Calendar/Gmail support, optional Gemini routing, local project/command history, and 92 automated tests passing in the verified August 2026 state.</li>
+                <li>A deployed, self-contained physical AI appliance — not a chat window on a laptop.</li>
+                <li>End-to-end local voice loop: microphone → Faster-Whisper → local Llama 3.2 → ElevenLabs.</li>
+                <li>Software, AI, interface, Linux deployment, and a custom 3D-printed enclosure designed as one system.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Problem -->
-          <article class="detail-block" id="problem">
-            <p class="eyebrow">Problem</p>
-            <h2>What needed solving.</h2>
-            <p>Most AI assistants are either cloud chat interfaces or isolated automation tools. They do not provide a persistent physical presence, do not unify personal context and actions in one system, and often require sending every request to a remote model. For a device that can eventually manage projects, files, communication, automations, and software-development tasks, I needed an architecture that remained useful locally, reached cloud services only when they added value, and placed human approval between AI reasoning and consequential external actions.</p>
+          <!-- By the numbers -->
+          <article class="detail-block" id="impact">
+            <p class="eyebrow">At a glance</p>
+            <h2>The current unit.</h2>
+            <div class="stat-grid">
+              <div class="stat"><span class="num">92</span><span class="cap">automated tests passing</span></div>
+              <div class="stat"><span class="num">100%</span><span class="cap">on-device model inference</span></div>
+              <div class="stat"><span class="num">7-inch</span><span class="cap">touchscreen · 1024 × 600</span></div>
+              <div class="stat"><span class="num">Gen 1</span><span class="cap">unit printed, assembled &amp; deployed</span></div>
+            </div>
           </article>
 
-          <!-- Solution -->
-          <article class="detail-block" id="solution">
-            <p class="eyebrow">Solution</p>
-            <h2>How I approached it.</h2>
-            <p>ARGUS uses the ThinkCentre as a dedicated local hub. A single FastAPI backend serves the 1024×600 dashboard, routes predictable commands to small Python handlers, falls back to Ollama for open-ended reasoning, stores local state in SQLite, and exposes voice and integration endpoints. The interface presents ARGUS as a central animated presence whose state changes through idle, listening, thinking, speaking, executing, success, error, and approval modes. Google writes and cloud escalation use an approval queue; optional Gemini routing is implemented, while premium Claude/OpenAI execution and broader personal-data connectors remain future work.</p>
+          <!-- Purpose & principles -->
+          <article class="detail-block" id="purpose">
+            <p class="eyebrow">Purpose</p>
+            <h2>Design principles.</h2>
+            <p>ARGUS explores how an AI assistant can operate as a local physical system rather than only as a cloud-hosted chat interface. It is built around a few principles:</p>
+            <ul class="highlight-list" style="margin-top:16px;">
+              <li>Local operation stays available without depending entirely on cloud services.</li>
+              <li>Deterministic software handles structured actions whenever possible.</li>
+              <li>Language models are used for interpretation and open-ended reasoning.</li>
+              <li>External actions are gated behind explicit user approval.</li>
+              <li>Personal integrations and credentials stay separated from source code.</li>
+              <li>Software, interface, enclosure, and hardware are designed as one system.</li>
+              <li>Cloud services extend the system rather than becoming its only foundation.</li>
+            </ul>
           </article>
 
-          <!-- System design -->
+          <!-- System architecture -->
           <article class="detail-block" id="system-design">
-            <p class="eyebrow">System Design</p>
-            <h2>How it fits together.</h2>
+            <p class="eyebrow">System Architecture</p>
+            <h2>Layered by concern.</h2>
             <div class="spec-grid" style="margin-top:24px;">
               <div class="spec-card">
-                <span class="label">Physical Interface</span>
-                <p>Dedicated 7-inch 1024×600 display in a custom 3D-printed enclosure built around the ThinkCentre and audio hardware. Chromium runs as a kiosk, and the central hub state machine gives ARGUS a persistent visual presence.</p>
+                <span class="label">Physical Interaction</span>
+                <p>Touchscreen, microphone, speaker, ThinkCentre, and custom enclosure — the user-facing interaction point that houses the local computing hardware.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Local Core</span>
-                <p>FastAPI/uvicorn backend, deterministic command router, Ollama llama3.2, SQLite database, project/note memory, approval queue, voice transcription, TTS endpoints, and system services. This is the default path and is designed to keep working when optional integrations are unavailable.</p>
+                <span class="label">Interface</span>
+                <p>A browser-based dashboard built for the 1024 × 600 display; the assistant's visual presence, talking to the FastAPI backend.</p>
               </div>
               <div class="spec-card">
-                <span class="label">Integrations + Cloud</span>
-                <p>Current optional capabilities include Google Tasks/Calendar/Gmail and Gemini cloud routing behind configuration and approvals. Planned expansion includes premium models, network files and personal context, automations, remote access, and a review-first developer-agent workflow.</p>
+                <span class="label">Application</span>
+                <p>The FastAPI backend coordinates interface requests, voice I/O, model communication, commands, and external-service integrations.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Voice</span>
+                <p>Microphone capture → Faster-Whisper transcription → request pipeline → ElevenLabs speech, played through the device.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Reasoning</span>
+                <p>Open-ended requests run on a local Llama 3.2 model via Ollama; structured behaviour is kept distinct from model reasoning.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Integration</span>
+                <p>Google Tasks, Calendar, and Gmail via OAuth, with credentials and tokens stored outside source control.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Deployment</span>
+                <p>systemd-managed backend and kiosk (Xorg, Openbox, Chromium); auto-starts at boot and waits for backend health.</p>
+              </div>
+              <div class="spec-card">
+                <span class="label">Testing &amp; Development</span>
+                <p>GitHub as the source of truth, automated tests (92 passing), and deployment / troubleshooting documentation.</p>
               </div>
             </div>
           </article>
 
-          <!-- Build process -->
-          <article class="detail-block" id="build-process">
-            <p class="eyebrow">Build Process</p>
-            <h2>How it came together.</h2>
-            <div class="timeline" style="margin-top:24px;">
-              <div class="timeline-item">
-                <div class="timeline-date">Step 01</div>
-                <p style="margin-top:8px;">Defined the product architecture: a dedicated physical hub with local reasoning by default, optional cloud escalation, and explicit approval before external side effects.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 02</div>
-                <p style="margin-top:8px;">Designed and iterated the 3D-printed enclosure around the 7-inch display, ThinkCentre, speaker, and assembly constraints, refining tolerances, print orientation, and part connections.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 03</div>
-                <p style="margin-top:8px;">Built the FastAPI backend and the fixed 1024×600 dashboard, then deployed the physical interface as an Ubuntu kiosk using Xorg, Openbox, Chromium, and systemd services.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 04</div>
-                <p style="margin-top:8px;">Added deterministic command routing, local Ollama inference, browser/device voice input, faster-whisper/whisper transcription, ElevenLabs TTS, and SQLite-backed local state.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 05</div>
-                <p style="margin-top:8px;">Added Google authentication/integrations, approval-gated external actions, API-budget/model-routing logic, and an optional Gemini fallback; expanded automated coverage to 92 passing tests.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">Step 06</div>
-                <p style="margin-top:8px;">Removed superseded legacy code, synchronized the deployed ThinkCentre with GitHub, and created living architecture/current-state/roadmap documentation plus a review-first development workflow.</p>
-              </div>
-            </div>
+          <!-- Voice workflow -->
+          <article class="detail-block" id="workflow">
+            <p class="eyebrow">Voice Interaction Workflow</p>
+            <h2>From spoken word to spoken reply.</h2>
+            <ol class="numbered-list">
+              <li>The user speaks to ARGUS through the physical microphone.</li>
+              <li>The system records the audio input.</li>
+              <li>Faster-Whisper converts the audio into text.</li>
+              <li>The backend receives and interprets the transcribed request.</li>
+              <li>The request is processed through structured application logic or the local language model.</li>
+              <li>Any required Google service or tool integration is invoked.</li>
+              <li>Consequential external actions are placed behind the appropriate approval behaviour.</li>
+              <li>ARGUS generates a final text response.</li>
+              <li>ElevenLabs converts the response into speech.</li>
+              <li>The audio response is played through the physical device.</li>
+            </ol>
           </article>
 
-          <!-- Demo media (placeholder until argus-demo.mp4 is added) -->
-          <article class="detail-block" id="demo-media">
-            <p class="eyebrow">Demo Media</p>
-            <h2>See it in motion.</h2>
-            <div class="media-placeholder" style="margin-top:24px;" role="img" aria-label="Demo video placeholder">
-              Demo video — coming soon
-            </div>
+          <!-- Hardware -->
+          <article class="detail-block" id="hardware">
+            <p class="eyebrow">Hardware</p>
+            <h2>The physical system.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Lenovo ThinkCentre M90n-1 Nano running Ubuntu / Linux — the local compute for backend, model, voice, and interface.</li>
+              <li>Seven-inch Waveshare touchscreen at 1024 × 600, driven as a dedicated kiosk.</li>
+              <li>Microphone and speaker for a self-contained interaction point.</li>
+              <li>Custom 3D-printed enclosure housing the display, computer, and audio hardware.</li>
+              <li>Locally hosted Ollama language model (Llama 3.2).</li>
+            </ul>
+          </article>
+
+          <!-- Enclosure -->
+          <article class="detail-block" id="enclosure">
+            <p class="eyebrow">Enclosure &amp; Mechanical Design</p>
+            <h2>Designed to be built, not just modelled.</h2>
+            <p>I designed the ARGUS enclosure from concept sketches through CAD modelling, tolerance testing, and iterative 3D printing, then assembled the finished unit by hand. The design had to account for the screen, the ThinkCentre, cable routing, assembly access, and print orientation — not just the ideal CAD shape.</p>
+            <p>The original concept was a single solid body, which proved impractical to print as one component. I redesigned it as multiple parts that could be printed, assembled, and serviced more effectively — a change that introduced new constraints around connection methods, tolerances, surface finish, and support material. The final design reflects lessons learned from failed prints and physical assembly, not CAD alone.</p>
+          </article>
+
+          <!-- Current capabilities -->
+          <article class="detail-block" id="capabilities">
+            <p class="eyebrow">Current Capabilities</p>
+            <h2>What works today.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>End-to-end voice conversations through the physical device.</li>
+              <li>Speech-to-text via Faster-Whisper; open-ended answers via a local Llama 3.2 model.</li>
+              <li>Spoken responses via ElevenLabs text-to-speech.</li>
+              <li>Google OAuth with Tasks, Calendar, and Gmail integration.</li>
+              <li>Approval-oriented handling of consequential external actions.</li>
+              <li>A dedicated FastAPI backend and a browser UI for the seven-inch display.</li>
+              <li>Local-network access from trusted devices.</li>
+              <li>Automatic backend and kiosk startup at boot, with a health-check endpoint.</li>
+              <li>92 automated tests passing.</li>
+              <li>Secure separation of credentials, OAuth tokens, and sensitive configuration.</li>
+            </ul>
+            <p style="margin-top:16px; color: var(--label); font-size: 14px;">Kept honest: persistent conversation and project memory is not yet verified, so it isn't treated as a confirmed capability; the interface's CPU, memory, temperature, and network areas are currently placeholders rather than live telemetry; and no cloud models are connected — open-ended reasoning runs entirely on the local Ollama model.</p>
+          </article>
+
+          <!-- Challenges -->
+          <article class="detail-block" id="challenges">
+            <p class="eyebrow">Key Engineering Challenges</p>
+            <h2>The hard parts.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li><strong>Local AI performance</strong> — balancing response quality, memory, and speed on the ThinkCentre's limited resources.</li>
+              <li><strong>Voice-system integration</strong> — coordinating recording, transcription, reasoning, synthesis, and playback across services.</li>
+              <li><strong>Physical kiosk deployment</strong> — Linux console permissions, Xorg startup, Chromium snap restrictions, and service ordering.</li>
+              <li><strong>Hardware integration</strong> — designing the enclosure around screen, computer, cables, access, tolerances, and print limits.</li>
+              <li><strong>Controlled external actions</strong> — separating conversational reasoning from actions that modify email, tasks, and calendars.</li>
+              <li><strong>Scope management</strong> — keeping working features, experimental foundations, and future ideas clearly distinct.</li>
+            </ul>
+          </article>
+
+          <!-- My contributions -->
+          <article class="detail-block" id="key-contributions">
+            <p class="eyebrow">My Contributions</p>
+            <h2>What I did.</h2>
+            <ul class="highlight-list" style="margin-top:8px;">
+              <li>Defined the original ARGUS product concept and project direction.</li>
+              <li>Designed the overall hardware and software architecture.</li>
+              <li>Selected and configured the ThinkCentre platform and seven-inch display.</li>
+              <li>Designed and developed the FastAPI backend and device dashboard.</li>
+              <li>Integrated the local Ollama model and Llama 3.2 request processing.</li>
+              <li>Integrated microphone input, Faster-Whisper transcription, and ElevenLabs speech.</li>
+              <li>Implemented complete end-to-end voice interaction.</li>
+              <li>Integrated Google Tasks, Calendar, and Gmail with OAuth and secure token handling.</li>
+              <li>Designed approval-oriented behaviour for consequential external actions.</li>
+              <li>Configured Linux services and the kiosk environment with automatic startup.</li>
+              <li>Diagnosed Xorg, Chromium, display, power, and local-network issues.</li>
+              <li>Created and executed automated tests (92 passing) and maintained Git / GitHub workflows.</li>
+              <li>Produced deployment, development, and troubleshooting documentation.</li>
+              <li>Designed the enclosure entirely in CAD and manufactured it through iterative 3D printing.</li>
+              <li>Assembled and integrated the final physical system.</li>
+              <li>Documented the finished device and its development with photos and video.</li>
+            </ul>
           </article>
 
           <!-- What I learned -->
           <article class="detail-block" id="learned">
-            <p class="eyebrow">What I Learned</p>
+            <p class="eyebrow">Key Engineering Lessons</p>
             <h2>What I'd carry forward.</h2>
-            <p>ARGUS reinforced that product engineering is a system problem, not a collection of isolated software and CAD tasks. On the hardware side, I learned that enclosure geometry has to be designed around manufacturing realities — print orientation, support material, clearances, assembly access, cables, and real hardware — rather than only the ideal CAD shape. On the software side, I learned to separate deterministic behavior from LLM reasoning, make optional integrations degrade cleanly, and use approval gates, tests, and living documentation to keep an AI-driven system understandable as it grows. The most valuable lesson has been designing the hardware, interface, deployment, and AI architecture together instead of treating them as independent layers.</p>
+            <p>ARGUS reinforced that building a physical AI product is a system-engineering problem, not a collection of isolated software features.</p>
+            <p>On the software and deployment side, I learned to separate deterministic behaviour from language-model reasoning, isolate optional integrations behind approval controls, and lean on testing and documentation to keep a growing AI system understandable — while configuring Linux services, a kiosk environment, local networking, and automatic startup for a dedicated device.</p>
+            <p>On the mechanical side, I learned that a design that looks correct in CAD can still be hard to manufacture, assemble, or maintain — print orientation, connection methods, real-world tolerances, and cable access have to shape the design from the start. The most important lesson: the software, AI, interface, deployment, electronics, and enclosure have to be designed as one integrated product.</p>
           </article>
 
-          <!-- Next steps -->
-          <article class="detail-block" id="next-steps">
-            <p class="eyebrow">Next Steps</p>
-            <h2>Where it goes next.</h2>
-            <p>Immediate work is to finish UI polish with self-hosted fonts, replace placeholder CPU/TEMP/MEM/LAN values with live ThinkCentre metrics, and verify the Gemini fallback against a real API key. The next capability layer is broader personal context: network files, project documentation, and additional services that ARGUS can read and act on through controlled tools. Voice will move toward a more natural wake/sleep interaction instead of chunked push-to-talk. The major long-term milestone is a review-first developer-agent loop: receive a feature request, delegate implementation to a coding agent on a development branch, run tests, prepare a commit/PR, and present the change for human approval before deployment.</p>
+          <!-- Technologies -->
+          <article class="detail-block" id="technologies">
+            <p class="eyebrow">Technology Stack</p>
+            <div class="tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Uvicorn</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">Llama 3.2</span>
+              <span class="tag">Faster-Whisper</span>
+              <span class="tag">ElevenLabs</span>
+              <span class="tag">Google APIs</span>
+              <span class="tag">OAuth</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Pytest</span>
+              <span class="tag">Ubuntu / Linux</span>
+              <span class="tag">systemd</span>
+              <span class="tag">Xorg</span>
+              <span class="tag">Openbox</span>
+              <span class="tag">Chromium Kiosk</span>
+              <span class="tag">3D Printing / CAD</span>
+              <span class="tag">Git / GitHub</span>
+            </div>
+            <p style="margin-top:20px; color: var(--label); font-size: 14px;">The ARGUS source repository is private and may remain so — as a potentially commercial product, this page documents the engineering and the finished system rather than publishing the code.</p>
           </article>
 
-          <!-- Back to projects -->
-          <a class="next-project accent-purple" href="index.html#projects">
+          <!-- Next project -->
+          <a class="next-project accent-darkred" href="calhoun-epicor.html">
             <div>
-              <span class="label">More work</span>
-              <span class="value">All projects</span>
+              <span class="label">Next project</span>
+              <span class="value">SolidWorks-to-Epicor Middleware</span>
             </div>
             <span class="arrow" aria-hidden="true">&rarr;</span>
           </a>
