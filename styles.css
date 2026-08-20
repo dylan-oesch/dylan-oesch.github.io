@@ -710,6 +710,65 @@ h3 {
   color: var(--label);
 }
 
+/* Full-page "coming soon" cover for a project that isn't built yet */
+.project-cover {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 46ch;
+  margin-top: 24px;
+}
+
+.project-cover .cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.project-cover .cover-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.project-cover h1 {
+  margin: 22px 0 0;
+}
+
+.project-cover .cover-lede {
+  margin: 20px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.project-cover .cover-note {
+  margin: 12px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+.project-cover .btn {
+  margin-top: 34px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-cover .cover-badge::before {
+    animation: cs-pulse 2.4s ease-in-out infinite;
+  }
+}
+
 /* Coming-soon banner (reusable on any project detail page) */
 .coming-soon {
   display: flex;
