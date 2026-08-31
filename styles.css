@@ -940,6 +940,40 @@ h3 {
   color: var(--faint);
 }
 
+/* Photos */
+.figure img,
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+.figure.portrait {
+  max-width: 460px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.photo-grid figure {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .figure.portrait {
+    max-width: 100%;
+  }
+}
+
 .detail-body {
   display: grid;
   gap: 56px;
