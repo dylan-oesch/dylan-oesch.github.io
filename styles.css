@@ -949,7 +949,7 @@ h3 {
   border: 1px solid var(--border);
 }
 
-.figure.portrait {
+.figure-narrow {
   max-width: 460px;
 }
 
@@ -969,7 +969,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .figure.portrait {
+  .figure-narrow {
     max-width: 100%;
   }
 }
