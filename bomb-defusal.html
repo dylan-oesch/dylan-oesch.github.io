@@ -80,6 +80,11 @@
           <div class="spec"><span class="label">Status</span><span class="value">Complete — breadboard prototype</span></div>
         </div>
 
+        <figure class="figure figure-narrow">
+          <img class="photo" src="media/bomb-defusal/bomb-start.jpg" width="1050" height="1400" alt="The completed bomb-defusal game on breadboards, with the green LCD reading 'Bomb Duel! OK to start'." loading="eager">
+          <figcaption class="figcaption">Fig. 01 — the completed two-player build; the LCD reads &ldquo;Bomb Duel! OK to start.&rdquo;</figcaption>
+        </figure>
+
         <div class="detail-body">
           <!-- Overview + Highlights -->
           <div class="two-col">
@@ -145,6 +150,10 @@
               <li>If a player's timer reaches zero, that player loses and the other wins.</li>
               <li>The confirmation button begins a new round after the game ends.</li>
             </ol>
+            <figure class="figure figure-narrow" style="margin-top:28px;">
+              <img class="photo" src="media/bomb-defusal/bomb-guess.jpg" width="788" height="1400" alt="The LCD during Player 1's turn, showing a four-digit guess, the OK prompt, feedback dots, and a 67-second timer." loading="lazy">
+              <figcaption class="figcaption">Fig. 02 — Player 1's turn: the four-digit guess, confirm prompt, feedback dots, and remaining timer.</figcaption>
+            </figure>
           </article>
 
           <!-- Software architecture -->
@@ -168,6 +177,10 @@
             <h2>Position-aware, duplicate-safe feedback.</h2>
             <p>For each submitted digit, the game returns one of three results: correct digit in the correct position, correct digit in the wrong position, or digit not present in the hidden code.</p>
             <p>The logic handles repeated digits by tracking which positions in both the generated code and the submitted guess have already been matched. Correct-position matches are resolved first; the remaining unmatched digits are then checked for wrong-position matches — so one digit in the hidden code is never counted more than once.</p>
+            <figure class="figure figure-narrow" style="margin-top:28px;">
+              <img class="photo" src="media/bomb-defusal/bomb-feedback.jpg" width="788" height="1400" alt="The LCD showing position-aware feedback: a checkmark for a correct-position digit, X for wrong position, and a hand-off arrow to Player 2." loading="lazy">
+              <figcaption class="figcaption">Fig. 03 — position-aware feedback: ✓ correct position, ✗ wrong, then hand-off to Player 2.</figcaption>
+            </figure>
           </article>
 
           <!-- Timing, input & feedback -->
@@ -181,6 +194,16 @@
               <li>A progressive warning system speeds up the yellow LED and buzzer as time runs low, with a red LED and continuous tone on timeout and a green LED on a successful defuse.</li>
               <li>The 16×2 I²C LCD shows the current player, guess, feedback, remaining time, and round state, with a custom character for a correct-position checkmark.</li>
             </ul>
+            <div class="photo-grid">
+              <figure>
+                <img class="photo" src="media/bomb-defusal/bomb-win.jpg" width="788" height="1400" alt="The LCD reading 'P1 DEFUSED! OK = new round' with the green status LED lit." loading="lazy">
+                <figcaption class="figcaption">Fig. 04 — win state: the green LED and &ldquo;P1 DEFUSED!&rdquo;</figcaption>
+              </figure>
+              <figure>
+                <img class="photo" src="media/bomb-defusal/bomb-lose.jpg" width="1050" height="1400" alt="The LCD reading 'P1 TIME OUT! P2 wins' with the red status LED lit." loading="lazy">
+                <figcaption class="figcaption">Fig. 05 — timeout: the red LED and &ldquo;P1 TIME OUT!&rdquo;</figcaption>
+              </figure>
+            </div>
           </article>
 
           <!-- Circuit design -->
