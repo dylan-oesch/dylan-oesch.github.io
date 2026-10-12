@@ -637,6 +637,52 @@ h3 {
   margin-bottom: 10px;
 }
 
+.team-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.team-link-arrow {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--label);
+  transition: color var(--ease);
+}
+
+.team-link:hover,
+.team-link:focus-visible,
+.team-link:hover .team-link-arrow,
+.team-link:focus-visible .team-link-arrow {
+  color: var(--accent);
+}
+
+.team-link:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .team-link-arrow {
+    transition: color var(--ease), transform var(--ease);
+  }
+
+  .team-link:hover .team-link-arrow,
+  .team-link:focus-visible .team-link-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-link,
+  .team-link-arrow {
+    transition: none;
+  }
+}
+
 /* -------------------------------------------------------------
    04 · Skills — hairline-divided groups
    ------------------------------------------------------------- */
