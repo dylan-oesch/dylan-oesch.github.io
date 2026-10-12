@@ -624,6 +624,19 @@ h3 {
   font-size: 14px;
 }
 
+.engineering-teams {
+  margin-top: 56px;
+}
+
+.engineering-teams .team-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.team-entry h3 {
+  margin-bottom: 10px;
+}
+
 /* -------------------------------------------------------------
    04 · Skills — hairline-divided groups
    ------------------------------------------------------------- */
@@ -1291,6 +1304,10 @@ h3 {
 
   .portrait {
     max-width: 260px;
+  }
+
+  .engineering-teams .team-grid {
+    grid-template-columns: 1fr;
   }
 
   .skill-group {
